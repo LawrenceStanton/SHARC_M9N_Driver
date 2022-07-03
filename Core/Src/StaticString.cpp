@@ -23,9 +23,11 @@ size_t StaticString::find(char c) const{
 	return (i == end()) ? npos : i - begin();
 }
 
-size_t StaticString::find_last_of(char c) const{
-	auto i = std::find_end(begin(), end(), &c, &c);
-	return (i == end()) ? npos : i - begin();
+size_t StaticString::rfind(char c) const{
+	auto rBegin = std::make_reverse_iterator(end());
+	auto rEnd = std::make_reverse_iterator(begin());
+	auto i = std::find(rBegin, rEnd, c);
+	return (i == rEnd) ? npos : (l-1) - (i - rBegin);
 }
 
 

@@ -173,6 +173,8 @@ void UART::Tx::txCmpltCallback(){
  */
 void UART::Rx::rxEventCallback(uint16_t size){
 	if(size == dmaBuff.tail) return;	// Do nothing. Unknown event of zero size.
+
+	if(offloadBuff.tail == offloadBuff.size) offloadBuff.tail = 0;	// Flush if buffer completely full.
 	
 	// Offload buffer overflow. Reduce size to fill only available capacity. All further characters will be discarded.
 	uint16_t head = (offloadBuff.tail + (size - dmaBuff.tail) > offloadBuff.size) ?  // Will the offload buffer overflow if [size] characters are added.

@@ -20,6 +20,7 @@
 #include "NMEA_Standard.hpp"
 
 #include <algorithm>
+#include <map>
 
 M9N_Base::NMEA_PUBX::PUBX::PUBX(uint8_t msgId) :
 	NMEA_PUBX(),
@@ -64,38 +65,36 @@ M9N_Base::NMEA_PUBX::Message M9N_Base::NMEA_PUBX::getMessage(const StaticString 
 		if(addr == "PUBX") addr = string(s.begin() + 1, firstDelim + 3);
 		else if(addr.size() == 5) addr = addr.substr(2);	// Drop SS from normal address.
 
-		return Message::UNKNOWN;
+		static std::map<StaticString, Message> m{
+			{"DTM", Message::DTM},
+			{"GAQ", Message::GAQ},
+			{"GBQ", Message::GBQ},
+			{"GBS", Message::GBS},
+			{"GGA", Message::GGA},
+			{"GLL", Message::GLL},
+			{"GLQ", Message::GLQ},
+			{"GNQ", Message::GNQ},
+			{"GNS", Message::GNS},
+			{"GPQ", Message::GPQ},
+			{"GRS", Message::GRS},
+			{"GSA", Message::GSA},
+			{"GST", Message::GST},
+			{"GSV", Message::GSV},
+			{"RLM", Message::RLM},
+			{"RMC", Message::RMC},
+			{"TXT", Message::TXT},
+			{"VLW", Message::VLW},
+			{"VTG", Message::VTG},
+			{"ZDA", Message::ZDA},
+			{"PUBX,41", Message::PUBX_CONFIG},
+			{"PUBX,00", Message::PUBX_POSITION},
+			{"PUBX,03", Message::PUBX_RATE},
+			{"PUBX,03", Message::PUBX_SVSTATUS},
+			{"PUBX,04", Message::PUBX_TIME}
+		};
 
-		// static std::map<std::string, Message> m{
-		// 	{"DTM", Message::DTM},
-		// 	{"GAQ", Message::GAQ},
-		// 	{"GBQ", Message::GBQ},
-		// 	{"GBS", Message::GBS},
-		// 	{"GGA", Message::GGA},
-		// 	{"GLL", Message::GLL},
-		// 	{"GLQ", Message::GLQ},
-		// 	{"GNQ", Message::GNQ},
-		// 	{"GNS", Message::GNS},
-		// 	{"GPQ", Message::GPQ},
-		// 	{"GRS", Message::GRS},
-		// 	{"GSA", Message::GSA},
-		// 	{"GST", Message::GST},
-		// 	{"GSV", Message::GSV},
-		// 	{"RLM", Message::RLM},
-		// 	{"RMC", Message::RMC},
-		// 	{"TXT", Message::TXT},
-		// 	{"VLW", Message::VLW},
-		// 	{"VTG", Message::VTG},
-		// 	{"ZDA", Message::ZDA},
-		// 	{"PUBX,41", Message::PUBX_CONFIG},
-		// 	{"PUBX,00", Message::PUBX_POSITION},
-		// 	{"PUBX,03", Message::PUBX_RATE},
-		// 	{"PUBX,03", Message::PUBX_SVSTATUS},
-		// 	{"PUBX,04", Message::PUBX_TIME}
-		// };
-
-		// if(m.find(addr) == m.end()) return Message::UNKNOWN;
-		// else return m[addr];
+		if(m.find(addr) == m.end()) return Message::UNKNOWN;
+		else return m[addr];
 	}
 	else return Message::UNKNOWN;
 }

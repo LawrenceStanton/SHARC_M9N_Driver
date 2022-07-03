@@ -60,8 +60,8 @@ public:
 
 protected:
 	struct Address{
-		string tt;	// Talker Identifier (string format)
-		string sss;	// Sentence Formatter
+		TalkerID tt;	// Talker Identifier (string format)
+		Message sss;	// Sentence Formatter
 		// Note: tt and sss are typically that many characters long but proprietary messages can be different.
 		
 		Address() = default;
@@ -117,8 +117,13 @@ protected:
 	/* Static helper functions */
 	template<size_t N>
 	static std::array<StaticString, N> parseFields(const string & nmea);
+
 	static string toString(const Message msg);
 	static string toString(const TalkerID tId);
+
+	static Message getMessage(const StaticString & s);
+	static TalkerID getTalkerId(const StaticString & s);
+
 
 									// Address below.
 	const char start = '$';	// Start Character
@@ -134,6 +139,8 @@ enum class NMEA_Standard::TalkerID {
 	GB,	// BeiDou
 	GQ,	// QZSS
 	GN,	// Any Combination
+
+	UNKNOWN
 };
 
 enum class NMEA_Standard::Message{
@@ -156,7 +163,9 @@ enum class NMEA_Standard::Message{
 	TXT,	// Test transmission
 	VLW,	// Dual Ground/Water Distance
 	VTG,	// Course over Ground and Speed
-	ZDA 	// Time and Date
+	ZDA, 	// Time and Date
+
+	UNKNOWN
 };
 
 class NMEA_Standard::GNS : public NMEA_Standard{

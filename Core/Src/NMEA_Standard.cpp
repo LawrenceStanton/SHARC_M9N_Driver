@@ -22,6 +22,7 @@
 
 #include <algorithm>
 #include <cstdio>
+#include <map>
 
 template<size_t N>
 std::array<string, N> NMEA_Standard::parseFields(const string & nmea){
@@ -64,16 +65,16 @@ InvalidNoFields:
  */
 NMEA_Standard::Address::Address(const string & str){
 	if(str.length() >= 3){
-		tt = str.substr(0, str.length() - 3);
-		sss = str.substr(2);
+		tt = getTalkerId(str.substr(0, str.length() - 3));
+		sss = getMessage(str.substr(2));
 	}
 }
 
 NMEA_Standard::Address::Address(const string & tt, const string & sss) :
-	tt(tt), sss(sss){}
+	tt(getTalkerId(tt)), sss(getMessage(sss)) {}
 
 string NMEA_Standard::Address::toString(){
-	return tt + sss;
+	return "";	// TODO
 }
 
 /* NMEA Checksum Methods */
@@ -87,7 +88,7 @@ NMEA_Standard::Checksum::Checksum(uint8_t c){
 }
 
 bool NMEA_Standard::Checksum::valid(const string & nmea){
-	auto astI = nmea.find_last_of('*');
+	auto astI = nmea.rfind('*');
 
 	if(nmea.empty() || astI == string::npos) return false;
 
@@ -152,6 +153,53 @@ string NMEA_Standard::toString(const TalkerID tId){
 	}
 }
 
+NMEA_Standard::Message NMEA_Standard::getMessage(const StaticString & s){
+	if(s.size() != 3) return Message::UNKNOWN;
+
+	static std::map<StaticString, Message> m{
+		{"DTM", Message::DTM},
+		{"GAQ", Message::GAQ},
+		{"GBQ", Message::GBQ},
+		{"GBS", Message::GBS},
+		{"GGA", Message::GGA},
+		{"GLL", Message::GLL},
+		{"GLQ", Message::GLQ},
+		{"GNQ", Message::GNQ},
+		{"GNS", Message::GNS},
+		{"GPQ", Message::GPQ},
+		{"GRS", Message::GRS},
+		{"GSA", Message::GSA},
+		{"GST", Message::GST},
+		{"GSV", Message::GSV},
+		{"RLM", Message::RLM},
+		{"RMC", Message::RMC},
+		{"TXT", Message::TXT},
+		{"VLW", Message::VLW},
+		{"VTG", Message::VTG},
+		{"ZDA", Message::ZDA},
+	};
+
+	if(m.find(s) == m.end()) return Message::UNKNOWN;
+	else return m[s];
+}
+
+NMEA_Standard::TalkerID NMEA_Standard::getTalkerId(const StaticString & s){
+	if(s.size() != 3) return TalkerID::UNKNOWN;
+
+	static std::map<StaticString, TalkerID> m{
+		{"GP", TalkerID::GP},
+		{"GL", TalkerID::GL},
+		{"GA", TalkerID::GA},
+		{"GB", TalkerID::GB},
+		{"GQ", TalkerID::GQ},
+		{"GN", TalkerID::GN}
+	};
+
+	if(m.find(s) == m.end()) return TalkerID::UNKNOWN;
+	else return m[s];
+}
+
+
 
 string NMEA_Standard::Checksum::toString(char cStr[4]){
 	auto nConv = std::snprintf(cStr, 4, "*%2X", cs);
@@ -161,7 +209,7 @@ string NMEA_Standard::Checksum::toString(char cStr[4]){
 /* NMEA UTC Time Methods */
 
 NMEA_Standard::UTC_Time::UTC_Time(const string & tStr){
-	std::sscanf(tStr.c_str(), "%2hhu%2hhu%f", &hh, &mm, &ss);
+	std::sscanf(tStr.c_str(), "%2hu%2hu%5f", (uint16_t*)&hh, (uint16_t*)&mm, &ss);
 }
 
 /*  NMEA Coordinate Methods */

@@ -180,26 +180,29 @@ inline void M9N::interpretNmea(const StaticString & s){
 	auto message = M9N_Base::NMEA_PUBX::getMessage(s);
 	switch(message){
 		case M9N_Base::NMEA_PUBX::Message::DTM :{
-
+			__NOP();
 			return;
 		}
 
 		case M9N_Base::NMEA_PUBX::Message::GAQ :{
-
+			__NOP();
 			return;
 		}
 
 		case M9N_Base::NMEA_PUBX::Message::GBQ :{
+			__NOP();
 
 			return;
 		}
 
 		case M9N_Base::NMEA_PUBX::Message::GBS :{
+			__NOP();
 
 			return;
 		}
 
 		case M9N_Base::NMEA_PUBX::Message::GGA :{
+			__NOP();
 
 			return;
 		}
@@ -207,101 +210,121 @@ inline void M9N::interpretNmea(const StaticString & s){
 		case M9N_Base::NMEA_PUBX::Message::GLL :{
 			NMEA_Standard::GLL gll{s};
 			
+			__NOP();
 
 			return;
 		}
 
 		case M9N_Base::NMEA_PUBX::Message::GLQ :{
+			__NOP();
 
 			return;
 		}
 
 		case M9N_Base::NMEA_PUBX::Message::GNQ :{
+			__NOP();
 
 			return;
 		}
 
 		case M9N_Base::NMEA_PUBX::Message::GNS :{
+			__NOP();
 
 			return;
 		}
 
 		case M9N_Base::NMEA_PUBX::Message::GPQ :{
+			__NOP();
 
 			return;
 		}
 
 		case M9N_Base::NMEA_PUBX::Message::GRS :{
+			__NOP();
 
 			return;
 		}
 
 		case M9N_Base::NMEA_PUBX::Message::GSA :{
+			__NOP();
 
 			return;
 		}
 
 		case M9N_Base::NMEA_PUBX::Message::GST :{
+			__NOP();
 
 			return;
 		}
 
 		case M9N_Base::NMEA_PUBX::Message::GSV :{
+			__NOP();
 
 			return;
 		}
 
 		case M9N_Base::NMEA_PUBX::Message::RLM :{
+			__NOP();
 
 			return;
 		}
 
 		case M9N_Base::NMEA_PUBX::Message::RMC :{
+			__NOP();
 
 			return;
 		}
 
 		case M9N_Base::NMEA_PUBX::Message::TXT :{
+			__NOP();
 
 			return;
 		}
 
 		case M9N_Base::NMEA_PUBX::Message::VLW :{
+			__NOP();
 
 			return;
 		}
 
 		case M9N_Base::NMEA_PUBX::Message::VTG :{
+			__NOP();
 
 			return;
 		}
 
 		case M9N_Base::NMEA_PUBX::Message::ZDA :{
+			__NOP();
 
 			return;
 		}
 
 		case M9N_Base::NMEA_PUBX::Message::PUBX_CONFIG :{
+			__NOP();
 
 			return;
 		}
 
 		case M9N_Base::NMEA_PUBX::Message::PUBX_POSITION :{
+			__NOP();
 
 			return;
 		}
 
 		case M9N_Base::NMEA_PUBX::Message::PUBX_RATE :{
+			__NOP();
 
 			return;
 		}
 
 		case M9N_Base::NMEA_PUBX::Message::PUBX_SVSTATUS :{
+			__NOP();
 
 			return;
 		}
 
 		case M9N_Base::NMEA_PUBX::Message::PUBX_TIME :{
+			__NOP();
 
 			return;
 		}

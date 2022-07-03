@@ -50,13 +50,15 @@ public:
 	inline char at(size_t n) const { return *(s + n); }
 
 
-	StaticString substr(size_t begin, size_t len = npos) const { return StaticString(s + begin, (len == npos) ? (l - begin) : len); }
+	StaticString substr(size_t begin, size_t len = npos) const { return StaticString(s + begin, ((len > l - begin) ? (l - begin) : len) ); }
 	size_t find(char c) const;
-	size_t find_last_of(char c) const;
+	size_t rfind(char c) const;
 
-	inline const char * operator = (const StaticString & str){ return str.s; }
+	// inline const char * operator = (const StaticString & str){ return str.s; }
 	StaticString operator + (StaticString & s);
 	bool operator == (StaticString && str) const { return strncmp(s, str.s, l) == 0; }
+	bool operator < (const StaticString & str) const { return strncmp(s, str.s, l) < 0; }
+	bool operator > (const StaticString & str) const { return strncmp(s, str.s, l) > 0; }
 	
 	static const size_t npos = -1;
 };
