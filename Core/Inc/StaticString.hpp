@@ -59,6 +59,7 @@ public:
 	bool operator == (StaticString && str) const { return strncmp(s, str.s, l) == 0; }
 	bool operator < (const StaticString & str) const { return strncmp(s, str.s, l) < 0; }
 	bool operator > (const StaticString & str) const { return strncmp(s, str.s, l) > 0; }
+	char operator [](unsigned int i) const { return ( (i < l) ? s[i] : 0 ); }
 	
 	static const size_t npos = -1;
 };

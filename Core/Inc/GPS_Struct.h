@@ -19,7 +19,6 @@
 #ifndef SRC_GPS_STRUCT_H_
 #define SRC_GPS_STRUCT_H_
 
-
 /*
  * Coordinate Object
  *
@@ -31,8 +30,7 @@
  * 				lat..............float32_t............................GPS Lattitude
  * 				longi............float32_t............................GPS Longitude
  */
-typedef struct
-{
+typedef struct{
 	float lat;
 	float longi;
 	uint32_t time;
@@ -53,8 +51,7 @@ typedef struct
  * 				precision........uint8_t..............................2 significant places representation of the fraction
  *
  */
-typedef struct
-{
+typedef struct{
 	int digit;
 	int precision;
 }DOP_t;
@@ -77,8 +74,7 @@ typedef struct
  * 3 - 3D Fix
  */
 
-typedef struct
-{
+typedef struct{
 	DOP_t PDOP;
 	DOP_t HDOP;
 	DOP_t VDOP;
@@ -93,13 +89,11 @@ typedef struct{
 	Diagnostic_t diag;		//Diagnostic information
 } M9N_Data_t;
 
-// M9N_Data_t m9nData;
 
 /*
  * @brief: Structure to store data from GPS in an organised format. Note: custom data types from HAL_GPS.h
  */
-typedef struct
-{
+typedef struct{
 	Coord_t  coordinates;	//GPS coordinates
 	Diagnostic_t diag;		//Diagnostic information
 	int env_Temp;		//environmental temperature
@@ -109,8 +103,6 @@ typedef struct
 	int current;		//battery current (mA)
 	int power;			//power consumption (mW)
 } GPS_Data_t;
-
-
 
 
 #endif /* SRC_GPS_STRUCT_H_ */

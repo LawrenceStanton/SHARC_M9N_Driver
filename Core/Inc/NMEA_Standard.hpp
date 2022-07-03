@@ -20,6 +20,8 @@
 
 #include <array>
 #include <stdint.h>
+#include <time.h>
+
 
 #include "StaticString.hpp"
 
@@ -67,7 +69,7 @@ protected:
 		Address() = default;
 		Address(const string & s);
 		Address(const string & tt, const string & sss);
-		string toString();
+		string toString(char buff[5]);
 	};
 	
 	struct Checksum{
@@ -91,23 +93,25 @@ protected:
 		UTC_Time() = default;
 		UTC_Time(const string & tStr);
 		UTC_Time(const UTC_Time & t) = default;
-		string toString();
+		string toString(char buff[9]);
 
-		// uint32_t operator = (const UTC_Time & t);	// Time in ms since Jan 1 1980
+		time_t daytime() const;
+
+		inline operator time_t() const { return daytime(); };
 	};
 
 	struct Coordinate{
 		uint16_t deg;
 		float min;
+		char nsew;
 
 		Coordinate() = default;
-		Coordinate(const string & s);
+		Coordinate(const string & s, char nsew);
 		Coordinate(const Coordinate & c) = default;
 
 		string toString(char cStr[11]);
-
-		float operator = (const Coordinate c);
-
+		
+		operator float() const;
 	};
 
 	NMEA_Standard() = default;	// Derived classes shall be responsible for all base member initialisation.
@@ -118,15 +122,14 @@ protected:
 	template<size_t N>
 	static std::array<StaticString, N> parseFields(const string & nmea);
 
-	static string toString(const Message msg);
-	static string toString(const TalkerID tId);
+	static const string toString(const Message msg);
+	static const string toString(const TalkerID tId);
 
 	static Message getMessage(const StaticString & s);
 	static TalkerID getTalkerId(const StaticString & s);
 
-
-									// Address below.
-	const char start = '$';	// Start Character
+									// Address can change for proprietary messages. Derived member.
+	const char start = '$';			// Start Character
 									// Payload defined in derived class.
 	Checksum cs;					// Checksum
 	const string crlf = "\r\n";		// Carriage Return, Line Forward
@@ -170,13 +173,25 @@ enum class NMEA_Standard::Message{
 
 class NMEA_Standard::GNS : public NMEA_Standard{
 private:
+	struct PosMode{
+		char gps;
+		char glonass;
+		char galileo;
+		char beidou;
+
+		PosMode() = default;
+		PosMode(const string & posMode) : 
+			gps(posMode[0]), 
+			glonass(posMode[1]), 
+			galileo(posMode[2]), 
+			beidou(posMode[3]) {}
+	};
+
 	Address addr;
 	UTC_Time time;	// GNSS UTC Time
 	Coordinate lat;	// Latitude
-	char NS;	// North / South
 	Coordinate lon;	// Longitude
-	char EW;	// East / West
-	string posMode;	// Positioning Mode
+	PosMode posMode;	// Positioning Mode
 	uint8_t numSV;	// Number of Satellites
 	float hdop;	// Horizontal Dilution of Precision
 	float alt;	// Altitude
@@ -194,7 +209,7 @@ public:
 };
 
 class NMEA_Standard::GLL : public NMEA_Standard{
-private:
+public:
 	Address addr;
 	Coordinate lat;
 	char NS;
@@ -204,14 +219,13 @@ private:
 	char status;
 	char posMode;
 
-public:
 	GLL(const std::array<StaticString, 9> & fields);
 	GLL(const string & nmea);
 	virtual string toString(char *) final{return "";}
 };
 
 class NMEA_Standard::GSA : public NMEA_Standard{
-private:
+public:
 	Address addr;
 	char opMode;	// Operational Mode ('M' or 'A')
 	uint8_t navMode;	// Navigation Mode
@@ -221,16 +235,15 @@ private:
 	float vdop;	// Vertical DOP
 	uint8_t systemId;	// GNSS System ID
 
-public:
 	GSA(const std::array<StaticString, 20> & fields);
 	GSA(const string & nmea);
 	virtual ~GSA() = default;
 
-	virtual string toString() final{return "";}	// Unimplemented
+	virtual string toString(char *) final{return "";}	// Unimplemented
 };
 
 class NMEA_Standard::ZDA : public NMEA_Standard{
-private:
+public:
 	struct UTC_DateTime : UTC_Time{
 		uint8_t day;
 		uint8_t month;
@@ -242,18 +255,21 @@ private:
 		UTC_DateTime(const string & time, 
 			uint8_t day, uint8_t month, uint16_t year, 
 			uint8_t ltzh, uint8_t ltzm);
+		
+		time_t epoch() const;
+		time_t midnight() const;
 
-		};
+		operator time_t() const;	// UNIX Epoch Time
+	};
 
 	Address addr;
 	UTC_DateTime time;
 
-public:
 	ZDA(const std::array<StaticString, 9> & fields);
 	ZDA(const string & nmea);
 	virtual ~ZDA() = default;
 
-	virtual string toString() final{return "";}	// Unimplemented
+	virtual string toString(char *) final{return "";}	// Unimplemented
 };
 
 class NMEA_Standard::BAD : public NMEA_Standard{

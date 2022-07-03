@@ -40,12 +40,12 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
- UART_HandleTypeDef huart4;
+UART_HandleTypeDef huart4;
 DMA_HandleTypeDef hdma_uart4_rx;
 DMA_HandleTypeDef hdma_uart4_tx;
 
 /* USER CODE BEGIN PV */
-
+GPS_Data_t gpsData = {0};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -70,7 +70,7 @@ int main(){
 
 	while(true){
 		HAL_Delay(100);
-		GPS_Update(nullptr);
+		GPS_Update();
 	}
 }
 /* USER CODE END 0 */

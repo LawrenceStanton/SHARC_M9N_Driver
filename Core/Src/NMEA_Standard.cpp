@@ -73,8 +73,12 @@ NMEA_Standard::Address::Address(const string & str){
 NMEA_Standard::Address::Address(const string & tt, const string & sss) :
 	tt(getTalkerId(tt)), sss(getMessage(sss)) {}
 
-string NMEA_Standard::Address::toString(){
-	return "";	// TODO
+string NMEA_Standard::Address::toString(char buff[5]){
+	auto ttStr = NMEA_Standard::toString(tt);
+	auto sssStr = NMEA_Standard::toString(sss);
+	std::copy(ttStr.begin(), ttStr.end(), buff);
+	std::copy(sssStr.begin(), sssStr.end(), buff + ttStr.length());
+	return string(buff, ttStr.length() + sssStr.length());
 }
 
 /* NMEA Checksum Methods */
@@ -115,7 +119,7 @@ void NMEA_Standard::setChecksum(){
 	cs.cs = Checksum::checksum(this->toString(nullptr));
 }
 
-string NMEA_Standard::toString(const Message msg){
+const string NMEA_Standard::toString(const Message msg){
 	switch (msg){
 		case Message::DTM : return "DTM";
 		case Message::GAQ : return "GAQ";
@@ -141,7 +145,7 @@ string NMEA_Standard::toString(const Message msg){
 	}
 }
 
-string NMEA_Standard::toString(const TalkerID tId){
+const string NMEA_Standard::toString(const TalkerID tId){
 	switch(tId){
 		case TalkerID::GP : return"GP";
 		case TalkerID::GL : return"GL";
@@ -184,7 +188,7 @@ NMEA_Standard::Message NMEA_Standard::getMessage(const StaticString & s){
 }
 
 NMEA_Standard::TalkerID NMEA_Standard::getTalkerId(const StaticString & s){
-	if(s.size() != 3) return TalkerID::UNKNOWN;
+	if(s.size() != 2) return TalkerID::UNKNOWN;
 
 	static std::map<StaticString, TalkerID> m{
 		{"GP", TalkerID::GP},
@@ -212,17 +216,21 @@ NMEA_Standard::UTC_Time::UTC_Time(const string & tStr){
 	std::sscanf(tStr.c_str(), "%2hu%2hu%5f", (uint16_t*)&hh, (uint16_t*)&mm, &ss);
 }
 
+time_t NMEA_Standard::UTC_Time::daytime() const{
+	return (hh * 60 + mm) * 60 * 1000 + ss * 1000;
+}
+
 /*  NMEA Coordinate Methods */
 
-NMEA_Standard::Coordinate::Coordinate(const string & s){
+NMEA_Standard::Coordinate::Coordinate(const string & s, char nsew) : nsew(nsew){
 	auto const decI = s.find('.');
 	if(
 		(decI != string::npos) &&
 		(s.length() >= 6) &&
 		(decI > 3)
 	){
-		char fmt[7];
-		std::snprintf(fmt, 7, "%%%1dhd%%f", decI-2);
+		char fmt[8];
+		std::snprintf(fmt, 8, "%%%1dhd%%8f", decI-2);
 		std::sscanf(s.c_str(), fmt, &deg, &min);
 	}
 }
@@ -238,8 +246,8 @@ string NMEA_Standard::Coordinate::toString(char cStr[12]){
  * @param c	The Coordinate being assigned.
  * @return float The Coordinate in fractional degrees.
  */
-float NMEA_Standard::Coordinate::operator = (const Coordinate c){
-	return static_cast<float>(c.deg)*60 + c.min;
+NMEA_Standard::Coordinate::operator float() const{
+	return (static_cast<float>(deg)*60 + min) * (( nsew == 'S') || (nsew == 'W') ? -1.0 : 1.0);
 }
 
 /* NMEA GNS Message */
@@ -248,10 +256,8 @@ NMEA_Standard::GNS::GNS(const std::array<StaticString, 15> & fields){
 		// Class constructors will handle empty cases.
 							addr 		= fields[0];
 							time		= fields[1];
-							lat			= fields[2];
-	if(!fields[3].empty())	NS 			= fields[3].at(0);
-							lon			= fields[4];
-	if(!fields[5].empty())	EW 			= fields[5].at(0);
+							lat			= Coordinate(fields[2], (!fields[3].empty() ? fields[3].at(0) : ' ') );
+							lon			= Coordinate(fields[4], (!fields[5].empty() ? fields[5].at(0) : ' ') );
 							posMode		= fields[6];
 	if(!fields[7].empty())	numSV		= std::strtoul(fields[7].c_str(), nullptr, 10);
 	if(!fields[8].empty())	hdop		= std::strtof(fields[8].c_str(), nullptr);
@@ -270,12 +276,8 @@ NMEA_Standard::GNS::GNS(const string & msg) :
 
 NMEA_Standard::GLL::GLL(const std::array<StaticString, 9> & fields){	
 							addr 	= fields[0];
-							lat 	= fields[1];
-	if(!fields[2].empty())	NS 		= fields[2].at(0);
-	else					NS 		= ' ';
-							lon 	= fields[3];
-	if(!fields[4].empty())	EW 		= fields[4].at(0);
-	else					EW 		= ' ';
+							lat 	= Coordinate(fields[1], (!fields[2].empty() ? fields[2].at(0) : ' '));
+							lon 	= Coordinate(fields[3], (!fields[4].empty() ? fields[4].at(0) : ' '));
 							time 	= fields[5];
 	if(!fields[6].empty()) 	status 	= fields[6].at(0);
 	else					status	= ' ';
@@ -295,7 +297,7 @@ NMEA_Standard::GSA::GSA(const std::array<StaticString, 20> & fields){
 	if(!fields[2].empty()) 	navMode 	= std::strtoul(fields[2].c_str(), nullptr, 10);
 	
 	for(int i = 0; i < 12; i++)
-	if(!fields[3+i].empty()) svid[i] 	= std::strtoul(fields[3+i].c_str(), nullptr, 10);
+							svid[i] = (!fields[3+i].empty()) ? std::strtoul(fields[3+i].c_str(), nullptr, 10) : 0u;
 	
 	if(!fields[15].empty()) pdop 		= std::strtof(fields[15].c_str(), nullptr);
 	if(!fields[16].empty()) hdop 		= std::strtof(fields[16].c_str(), nullptr);
@@ -322,6 +324,7 @@ NMEA_Standard::ZDA::ZDA(const std::array<StaticString, 9> & fields){
 NMEA_Standard::ZDA::ZDA(const string & nmea) :
 	ZDA(parseFields<9>(nmea)){}
 
+
 NMEA_Standard::ZDA::UTC_DateTime::UTC_DateTime(const string & time, 
 				uint8_t day, uint8_t month, uint16_t year, 
 				uint8_t ltzh, uint8_t ltzm) :
@@ -329,6 +332,24 @@ NMEA_Standard::ZDA::UTC_DateTime::UTC_DateTime(const string & time,
 	day(day), month(month), year(year),
 	ltzh(ltzh), ltzm(ltzm) {}
 
+time_t NMEA_Standard::ZDA::UTC_DateTime::epoch() const {
+	struct tm date{
+		.tm_sec 	= static_cast<int>(ss),
+		.tm_min 	= mm,
+		.tm_hour 	= hh,
+		.tm_mday 	= day,
+		.tm_mon 	= month,
+		.tm_year 	= year - 1990,
+		.tm_isdst = -1
+	};
+	return mktime(&date);
+}
+
+time_t NMEA_Standard::ZDA::UTC_DateTime::midnight() const{
+	return epoch() - daytime();
+}
+
+inline NMEA_Standard::ZDA::UTC_DateTime::operator time_t() const{ return epoch(); }
 
 
 /*** END OF FILE ***/

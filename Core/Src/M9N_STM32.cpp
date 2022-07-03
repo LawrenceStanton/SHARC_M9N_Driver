@@ -23,6 +23,8 @@
 #include <string>
 #include <vector>
 
+#include "M9N_C_API.hpp"
+
 M9N::M9N(UART_HandleTypeDef * h, IRQn_Type uartIrq, IRQn_Type dmaTxIrq, IRQn_Type dmaRxIrq) :
 	uart(h, uartIrq, dmaTxIrq, dmaRxIrq) {}
 
@@ -179,153 +181,20 @@ void M9N::scanMessages(){
 inline void M9N::interpretNmea(const StaticString & s){	
 	auto message = M9N_Base::NMEA_PUBX::getMessage(s);
 	switch(message){
-		case M9N_Base::NMEA_PUBX::Message::DTM :{
-			__NOP();
-			return;
-		}
-
-		case M9N_Base::NMEA_PUBX::Message::GAQ :{
-			__NOP();
-			return;
-		}
-
-		case M9N_Base::NMEA_PUBX::Message::GBQ :{
-			__NOP();
-
-			return;
-		}
-
-		case M9N_Base::NMEA_PUBX::Message::GBS :{
-			__NOP();
-
-			return;
-		}
-
-		case M9N_Base::NMEA_PUBX::Message::GGA :{
-			__NOP();
-
-			return;
-		}
-
+		/* Only the below cases are currently relevant. May be extended to include other cases. */
 		case M9N_Base::NMEA_PUBX::Message::GLL :{
 			NMEA_Standard::GLL gll{s};
-			
-			__NOP();
-
+			receiveGLL(gll);	// C API Call
 			return;
 		}
-
-		case M9N_Base::NMEA_PUBX::Message::GLQ :{
-			__NOP();
-
-			return;
-		}
-
-		case M9N_Base::NMEA_PUBX::Message::GNQ :{
-			__NOP();
-
-			return;
-		}
-
-		case M9N_Base::NMEA_PUBX::Message::GNS :{
-			__NOP();
-
-			return;
-		}
-
-		case M9N_Base::NMEA_PUBX::Message::GPQ :{
-			__NOP();
-
-			return;
-		}
-
-		case M9N_Base::NMEA_PUBX::Message::GRS :{
-			__NOP();
-
-			return;
-		}
-
 		case M9N_Base::NMEA_PUBX::Message::GSA :{
-			__NOP();
-
+			NMEA_Standard::GSA gsa{s};
+			receiveGSA(gsa);	// C API Call
 			return;
 		}
-
-		case M9N_Base::NMEA_PUBX::Message::GST :{
-			__NOP();
-
-			return;
-		}
-
-		case M9N_Base::NMEA_PUBX::Message::GSV :{
-			__NOP();
-
-			return;
-		}
-
-		case M9N_Base::NMEA_PUBX::Message::RLM :{
-			__NOP();
-
-			return;
-		}
-
-		case M9N_Base::NMEA_PUBX::Message::RMC :{
-			__NOP();
-
-			return;
-		}
-
-		case M9N_Base::NMEA_PUBX::Message::TXT :{
-			__NOP();
-
-			return;
-		}
-
-		case M9N_Base::NMEA_PUBX::Message::VLW :{
-			__NOP();
-
-			return;
-		}
-
-		case M9N_Base::NMEA_PUBX::Message::VTG :{
-			__NOP();
-
-			return;
-		}
-
 		case M9N_Base::NMEA_PUBX::Message::ZDA :{
-			__NOP();
-
-			return;
-		}
-
-		case M9N_Base::NMEA_PUBX::Message::PUBX_CONFIG :{
-			__NOP();
-
-			return;
-		}
-
-		case M9N_Base::NMEA_PUBX::Message::PUBX_POSITION :{
-			__NOP();
-
-			return;
-		}
-
-		case M9N_Base::NMEA_PUBX::Message::PUBX_RATE :{
-			__NOP();
-
-			return;
-		}
-
-		case M9N_Base::NMEA_PUBX::Message::PUBX_SVSTATUS :{
-			__NOP();
-
-			return;
-		}
-
-		case M9N_Base::NMEA_PUBX::Message::PUBX_TIME :{
-			__NOP();
-
+			NMEA_Standard::ZDA zda{s};
+			receiveZDA(zda);	// C API Call
 			return;
 		}
 		default: return;

@@ -35,6 +35,9 @@ public:
 	void scanMessages();
 	inline bool dataReady(){ return uart.rx.dataReady(); }
 
+	inline void interruptsOn(){ uart.interruptsOn(); }
+	inline void interruptsOff(){ uart.interruptsOff(); }
+	
 private:
 	UART uart;
 
@@ -46,6 +49,7 @@ private:
 
 	virtual void delay(uint32_t delay) final;
 	virtual void setBaudrate(Baud baud = Baud::B38400, PortID portId = PortID::UART1) final;
+
 
 	friend void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart);
 	friend void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size);

@@ -21,7 +21,10 @@
 #include "M9N_STM32.hpp"
 #include "GPS_Struct.h"
 
-//Initialisation/config enum
+extern M9N m9n;
+
+extern GPS_Data_t gpsData;
+
 extern "C" typedef enum{
 	GPS_Init_OK = 1,
 	GPS_Init_Ack_Error = 2,
@@ -32,14 +35,12 @@ extern "C" typedef enum{
 	GPS_Init_Offline_Error = 7
 }GPS_Init_msg_t;
 
-
 typedef enum{
 	GPS_MSG_RDY = 1,
 	GPS_BUSY= 2,
 	GPS_OFFLINE = 3,
 	GPS_ERROR = 4,
 }GPS_Status_t;
-
 
 typedef enum{
 	UBX_OK = 2,
@@ -64,9 +65,7 @@ GPS_Init_msg_t GPS_Init();
  * @param UpdateRate
  * @return GPS_Init_msg_t
  */
-extern "C" UBX_MSG_t GPS_UpdateRate_Config(int UpdateRate);
-
-
+extern "C" UBX_MSG_t GPS_UpdateRate_Config();
 
 /**
  * @brief Enable Low power GPS mode
@@ -88,11 +87,17 @@ extern "C" UBX_MSG_t GPS_LP_Disable();
  *
  * @return GPS_Status_t
  */
-extern "C" GPS_Status_t GPS_Update(GPS_Data_t * gpsDataInstance);
-
+extern "C" void GPS_Update();
 
 extern "C" uint8_t GPS_Data_Ready();
 
 extern "C" void GPS_InterruptsOff();
+
 extern "C" void GPS_InterruptsOn();
+
+void receiveGLL(const NMEA_Standard::GLL & gll);
+void receiveGSA(const NMEA_Standard::GSA & gsa);
+void receiveZDA(const NMEA_Standard::ZDA & zda);
+
+
 /*** END OF FILE ***/
