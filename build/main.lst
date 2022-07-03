@@ -1,0 +1,1740 @@
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 6
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"main.cpp"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.rodata._ZStL19piecewise_construct,"a"
+  20              		.align	2
+  23              	_ZStL19piecewise_construct:
+  24 0000 00       		.space	1
+  25              		.section	.text._ZL20__gthread_key_deletei,"ax",%progbits
+  26              		.align	1
+  27              		.syntax unified
+  28              		.thumb
+  29              		.thumb_func
+  31              	_ZL20__gthread_key_deletei:
+  32              		.fnstart
+  33              	.LFB785:
+  34              		.file 1 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-
+   1:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** /* Threads compatibility routines for libgcc2 and libobjc.  */
+   2:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** /* Compile this one with gcc.  */
+   3:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** /* Copyright (C) 1997-2020 Free Software Foundation, Inc.
+   4:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+   5:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** This file is part of GCC.
+   6:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+   7:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** GCC is free software; you can redistribute it and/or modify it under
+   8:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** the terms of the GNU General Public License as published by the Free
+   9:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** Software Foundation; either version 3, or (at your option) any later
+  10:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** version.
+  11:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+  12:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** GCC is distributed in the hope that it will be useful, but WITHOUT ANY
+  13:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** WARRANTY; without even the implied warranty of MERCHANTABILITY or
+  14:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+  15:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** for more details.
+  16:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+  17:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** Under Section 7 of GPL version 3, you are granted additional
+  18:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** permissions described in the GCC Runtime Library Exception, version
+  19:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 3.1, as published by the Free Software Foundation.
+  20:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+  21:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** You should have received a copy of the GNU General Public License and
+  22:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** a copy of the GCC Runtime Library Exception along with this program;
+  23:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+  24:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** <http://www.gnu.org/licenses/>.  */
+  25:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+  26:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** #ifndef _GLIBCXX_GCC_GTHR_SINGLE_H
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 2
+
+
+  27:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** #define _GLIBCXX_GCC_GTHR_SINGLE_H
+  28:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+  29:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** /* Just provide compatibility for mutex handling.  */
+  30:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+  31:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** typedef int __gthread_key_t;
+  32:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** typedef int __gthread_once_t;
+  33:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** typedef int __gthread_mutex_t;
+  34:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** typedef int __gthread_recursive_mutex_t;
+  35:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+  36:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** #define __GTHREAD_ONCE_INIT 0
+  37:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** #define __GTHREAD_MUTEX_INIT 0
+  38:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** #define __GTHREAD_MUTEX_INIT_FUNCTION(mx) do {} while (0)
+  39:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** #define __GTHREAD_RECURSIVE_MUTEX_INIT 0
+  40:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+  41:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** #define _GLIBCXX_UNUSED __attribute__((__unused__))
+  42:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+  43:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** #ifdef _LIBOBJC
+  44:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+  45:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** /* Thread local storage for a single thread */
+  46:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** static void *thread_local_storage = NULL;
+  47:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+  48:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** /* Backend initialization functions */
+  49:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+  50:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** /* Initialize the threads subsystem.  */
+  51:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** static inline int
+  52:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** __gthread_objc_init_thread_system (void)
+  53:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** {
+  54:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   /* No thread support available */
+  55:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   return -1;
+  56:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** }
+  57:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+  58:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** /* Close the threads subsystem.  */
+  59:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** static inline int
+  60:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** __gthread_objc_close_thread_system (void)
+  61:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** {
+  62:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   /* No thread support available */
+  63:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   return -1;
+  64:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** }
+  65:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+  66:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** /* Backend thread functions */
+  67:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+  68:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** /* Create a new thread of execution.  */
+  69:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** static inline objc_thread_t
+  70:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** __gthread_objc_thread_detach (void (* func)(void *), void * arg _GLIBCXX_UNUSED)
+  71:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** {
+  72:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   /* No thread support available */
+  73:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   return NULL;
+  74:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** }
+  75:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+  76:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** /* Set the current thread's priority.  */
+  77:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** static inline int
+  78:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** __gthread_objc_thread_set_priority (int priority _GLIBCXX_UNUSED)
+  79:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** {
+  80:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   /* No thread support available */
+  81:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   return -1;
+  82:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** }
+  83:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 3
+
+
+  84:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** /* Return the current thread's priority.  */
+  85:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** static inline int
+  86:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** __gthread_objc_thread_get_priority (void)
+  87:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** {
+  88:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   return OBJC_THREAD_INTERACTIVE_PRIORITY;
+  89:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** }
+  90:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+  91:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** /* Yield our process time to another thread.  */
+  92:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** static inline void
+  93:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** __gthread_objc_thread_yield (void)
+  94:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** {
+  95:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   return;
+  96:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** }
+  97:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+  98:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** /* Terminate the current thread.  */
+  99:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** static inline int
+ 100:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** __gthread_objc_thread_exit (void)
+ 101:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** {
+ 102:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   /* No thread support available */
+ 103:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   /* Should we really exit the program */
+ 104:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   /* exit (&__objc_thread_exit_status); */
+ 105:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   return -1;
+ 106:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** }
+ 107:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+ 108:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** /* Returns an integer value which uniquely describes a thread.  */
+ 109:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** static inline objc_thread_t
+ 110:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** __gthread_objc_thread_id (void)
+ 111:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** {
+ 112:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   /* No thread support, use 1.  */
+ 113:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   return (objc_thread_t) 1;
+ 114:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** }
+ 115:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+ 116:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** /* Sets the thread's local storage pointer.  */
+ 117:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** static inline int
+ 118:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** __gthread_objc_thread_set_data (void *value)
+ 119:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** {
+ 120:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   thread_local_storage = value;
+ 121:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   return 0;
+ 122:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** }
+ 123:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+ 124:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** /* Returns the thread's local storage pointer.  */
+ 125:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** static inline void *
+ 126:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** __gthread_objc_thread_get_data (void)
+ 127:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** {
+ 128:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   return thread_local_storage;
+ 129:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** }
+ 130:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+ 131:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** /* Backend mutex functions */
+ 132:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+ 133:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** /* Allocate a mutex.  */
+ 134:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** static inline int
+ 135:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** __gthread_objc_mutex_allocate (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 136:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** {
+ 137:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   return 0;
+ 138:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** }
+ 139:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+ 140:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** /* Deallocate a mutex.  */
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 4
+
+
+ 141:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** static inline int
+ 142:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** __gthread_objc_mutex_deallocate (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 143:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** {
+ 144:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   return 0;
+ 145:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** }
+ 146:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+ 147:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** /* Grab a lock on a mutex.  */
+ 148:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** static inline int
+ 149:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** __gthread_objc_mutex_lock (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 150:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** {
+ 151:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   /* There can only be one thread, so we always get the lock */
+ 152:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   return 0;
+ 153:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** }
+ 154:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+ 155:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** /* Try to grab a lock on a mutex.  */
+ 156:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** static inline int
+ 157:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** __gthread_objc_mutex_trylock (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 158:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** {
+ 159:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   /* There can only be one thread, so we always get the lock */
+ 160:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   return 0;
+ 161:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** }
+ 162:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+ 163:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** /* Unlock the mutex */
+ 164:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** static inline int
+ 165:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** __gthread_objc_mutex_unlock (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 166:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** {
+ 167:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   return 0;
+ 168:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** }
+ 169:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+ 170:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** /* Backend condition mutex functions */
+ 171:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+ 172:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** /* Allocate a condition.  */
+ 173:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** static inline int
+ 174:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** __gthread_objc_condition_allocate (objc_condition_t condition _GLIBCXX_UNUSED)
+ 175:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** {
+ 176:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   return 0;
+ 177:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** }
+ 178:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+ 179:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** /* Deallocate a condition.  */
+ 180:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** static inline int
+ 181:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** __gthread_objc_condition_deallocate (objc_condition_t condition _GLIBCXX_UNUSED)
+ 182:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** {
+ 183:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   return 0;
+ 184:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** }
+ 185:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+ 186:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** /* Wait on the condition */
+ 187:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** static inline int
+ 188:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** __gthread_objc_condition_wait (objc_condition_t condition _GLIBCXX_UNUSED,
+ 189:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 			       objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 190:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** {
+ 191:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   return 0;
+ 192:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** }
+ 193:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+ 194:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** /* Wake up all threads waiting on this condition.  */
+ 195:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** static inline int
+ 196:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** __gthread_objc_condition_broadcast (objc_condition_t condition _GLIBCXX_UNUSED)
+ 197:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** {
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 5
+
+
+ 198:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   return 0;
+ 199:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** }
+ 200:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+ 201:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** /* Wake up one thread waiting on this condition.  */
+ 202:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** static inline int
+ 203:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** __gthread_objc_condition_signal (objc_condition_t condition _GLIBCXX_UNUSED)
+ 204:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** {
+ 205:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   return 0;
+ 206:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** }
+ 207:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+ 208:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** #else /* _LIBOBJC */
+ 209:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+ 210:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** static inline int
+ 211:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** __gthread_active_p (void)
+ 212:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** {
+ 213:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   return 0;
+ 214:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** }
+ 215:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+ 216:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** static inline int
+ 217:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** __gthread_once (__gthread_once_t *__once _GLIBCXX_UNUSED, void (*__func) (void) _GLIBCXX_UNUSED)
+ 218:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** {
+ 219:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   return 0;
+ 220:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** }
+ 221:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+ 222:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** static inline int _GLIBCXX_UNUSED
+ 223:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** __gthread_key_create (__gthread_key_t *__key _GLIBCXX_UNUSED, void (*__func) (void *) _GLIBCXX_UNUS
+ 224:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** {
+ 225:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   return 0;
+ 226:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** }
+ 227:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** 
+ 228:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** static int _GLIBCXX_UNUSED
+ 229:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** __gthread_key_delete (__gthread_key_t __key _GLIBCXX_UNUSED)
+ 230:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** {
+  35              		.loc 1 230 1
+  36              		.cfi_startproc
+  37              		@ args = 0, pretend = 0, frame = 8
+  38              		@ frame_needed = 1, uses_anonymous_args = 0
+  39              		@ link register save eliminated.
+  40 0000 80B4     		push	{r7}
+  41              		.cfi_def_cfa_offset 4
+  42              		.cfi_offset 7, -4
+  43 0002 83B0     		sub	sp, sp, #12
+  44              		.cfi_def_cfa_offset 16
+  45 0004 00AF     		add	r7, sp, #0
+  46              		.cfi_def_cfa_register 7
+  47 0006 7860     		str	r0, [r7, #4]
+ 231:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h ****   return 0;
+  48              		.loc 1 231 10
+  49 0008 0023     		movs	r3, #0
+ 232:/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/gthr-default.h **** }
+  50              		.loc 1 232 1
+  51 000a 1846     		mov	r0, r3
+  52 000c 0C37     		adds	r7, r7, #12
+  53              		.cfi_def_cfa_offset 4
+  54 000e BD46     		mov	sp, r7
+  55              		.cfi_def_cfa_register 13
+  56              		@ sp needed
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 6
+
+
+  57 0010 5DF8047B 		ldr	r7, [sp], #4
+  58              		.cfi_restore 7
+  59              		.cfi_def_cfa_offset 0
+  60 0014 7047     		bx	lr
+  61              		.cfi_endproc
+  62              	.LFE785:
+  63              		.cantunwind
+  64              		.fnend
+  66              		.section	.rodata._ZL23CFG_HW_ANT_CFG_VOLTCTRL,"a"
+  67              		.align	2
+  70              	_ZL23CFG_HW_ANT_CFG_VOLTCTRL:
+  71 0000 01       		.byte	1
+  72 0001 A3       		.byte	-93
+  73 0002 2E00     		.short	46
+  74              		.section	.rodata._ZL23CFG_HW_ANT_CFG_SHORTDET,"a"
+  75              		.align	2
+  78              	_ZL23CFG_HW_ANT_CFG_SHORTDET:
+  79 0000 01       		.byte	1
+  80 0001 A3       		.byte	-93
+  81 0002 2F00     		.short	47
+  82              		.section	.rodata._ZL27CFG_HW_ANT_CFG_SHORTDET_POL,"a"
+  83              		.align	2
+  86              	_ZL27CFG_HW_ANT_CFG_SHORTDET_POL:
+  87 0000 01       		.byte	1
+  88 0001 A3       		.byte	-93
+  89 0002 3000     		.short	48
+  90              		.section	.rodata._ZL22CFG_HW_ANT_CFG_OPENDET,"a"
+  91              		.align	2
+  94              	_ZL22CFG_HW_ANT_CFG_OPENDET:
+  95 0000 01       		.byte	1
+  96 0001 A3       		.byte	-93
+  97 0002 3100     		.short	49
+  98              		.section	.rodata._ZL26CFG_HW_ANT_CFG_OPENDET_POL,"a"
+  99              		.align	2
+ 102              	_ZL26CFG_HW_ANT_CFG_OPENDET_POL:
+ 103 0000 01       		.byte	1
+ 104 0001 A3       		.byte	-93
+ 105 0002 3200     		.short	50
+ 106              		.section	.rodata._ZL22CFG_HW_ANT_CFG_PWRDOWN,"a"
+ 107              		.align	2
+ 110              	_ZL22CFG_HW_ANT_CFG_PWRDOWN:
+ 111 0000 01       		.byte	1
+ 112 0001 A3       		.byte	-93
+ 113 0002 3300     		.short	51
+ 114              		.section	.rodata._ZL26CFG_HW_ANT_CFG_PWRDOWN_POL,"a"
+ 115              		.align	2
+ 118              	_ZL26CFG_HW_ANT_CFG_PWRDOWN_POL:
+ 119 0000 01       		.byte	1
+ 120 0001 A3       		.byte	-93
+ 121 0002 3400     		.short	52
+ 122              		.section	.rodata._ZL22CFG_HW_ANT_CFG_RECOVER,"a"
+ 123              		.align	2
+ 126              	_ZL22CFG_HW_ANT_CFG_RECOVER:
+ 127 0000 01       		.byte	1
+ 128 0001 A3       		.byte	-93
+ 129 0002 3500     		.short	53
+ 130              		.section	.rodata._ZL25CFG_HW_ANT_SUP_SWITCH_PIN,"a"
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 7
+
+
+ 131              		.align	2
+ 134              	_ZL25CFG_HW_ANT_SUP_SWITCH_PIN:
+ 135 0000 02       		.byte	2
+ 136 0001 A3       		.byte	-93
+ 137 0002 3600     		.short	54
+ 138              		.section	.rodata._ZL24CFG_HW_ANT_SUP_SHORT_PIN,"a"
+ 139              		.align	2
+ 142              	_ZL24CFG_HW_ANT_SUP_SHORT_PIN:
+ 143 0000 02       		.byte	2
+ 144 0001 A3       		.byte	-93
+ 145 0002 3700     		.short	55
+ 146              		.section	.rodata._ZL23CFG_HW_ANT_SUP_OPEN_PIN,"a"
+ 147              		.align	2
+ 150              	_ZL23CFG_HW_ANT_SUP_OPEN_PIN:
+ 151 0000 02       		.byte	2
+ 152 0001 A3       		.byte	-93
+ 153 0002 3800     		.short	56
+ 154              		.section	.rodata._ZL21CFG_HW_ANT_SUP_ENGINE,"a"
+ 155              		.align	2
+ 158              	_ZL21CFG_HW_ANT_SUP_ENGINE:
+ 159 0000 02       		.byte	2
+ 160 0001 A3       		.byte	-93
+ 161 0002 5400     		.short	84
+ 162              		.section	.rodata._ZL24CFG_HW_ANT_SUP_SHORT_THR,"a"
+ 163              		.align	2
+ 166              	_ZL24CFG_HW_ANT_SUP_SHORT_THR:
+ 167 0000 02       		.byte	2
+ 168 0001 A3       		.byte	-93
+ 169 0002 5500     		.short	85
+ 170              		.section	.rodata._ZL23CFG_HW_ANT_SUP_OPEN_THR,"a"
+ 171              		.align	2
+ 174              	_ZL23CFG_HW_ANT_SUP_OPEN_THR:
+ 175 0000 02       		.byte	2
+ 176 0001 A3       		.byte	-93
+ 177 0002 5600     		.short	86
+ 178              		.section	.rodata._ZL16CFG_NMEA_PROTVER,"a"
+ 179              		.align	2
+ 182              	_ZL16CFG_NMEA_PROTVER:
+ 183 0000 02       		.byte	2
+ 184 0001 93       		.byte	-109
+ 185 0002 0100     		.short	1
+ 186              		.section	.rodata._ZL15CFG_NMEA_MAXSVS,"a"
+ 187              		.align	2
+ 190              	_ZL15CFG_NMEA_MAXSVS:
+ 191 0000 02       		.byte	2
+ 192 0001 93       		.byte	-109
+ 193 0002 0200     		.short	2
+ 194              		.section	.rodata._ZL15CFG_NMEA_COMPAT,"a"
+ 195              		.align	2
+ 198              	_ZL15CFG_NMEA_COMPAT:
+ 199 0000 01       		.byte	1
+ 200 0001 93       		.byte	-109
+ 201 0002 0300     		.short	3
+ 202              		.section	.rodata._ZL17CFG_NMEA_CONSIDER,"a"
+ 203              		.align	2
+ 206              	_ZL17CFG_NMEA_CONSIDER:
+ 207 0000 01       		.byte	1
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 8
+
+
+ 208 0001 93       		.byte	-109
+ 209 0002 0400     		.short	4
+ 210              		.section	.rodata._ZL16CFG_NMEA_LIMIT82,"a"
+ 211              		.align	2
+ 214              	_ZL16CFG_NMEA_LIMIT82:
+ 215 0000 01       		.byte	1
+ 216 0001 93       		.byte	-109
+ 217 0002 0500     		.short	5
+ 218              		.section	.rodata._ZL17CFG_NMEA_HIGHPREC,"a"
+ 219              		.align	2
+ 222              	_ZL17CFG_NMEA_HIGHPREC:
+ 223 0000 01       		.byte	1
+ 224 0001 93       		.byte	-109
+ 225 0002 0600     		.short	6
+ 226              		.section	.rodata._ZL20CFG_NMEA_SVNUMBERING,"a"
+ 227              		.align	2
+ 230              	_ZL20CFG_NMEA_SVNUMBERING:
+ 231 0000 02       		.byte	2
+ 232 0001 93       		.byte	-109
+ 233 0002 0700     		.short	7
+ 234              		.section	.rodata._ZL17CFG_NMEA_FILT_GPS,"a"
+ 235              		.align	2
+ 238              	_ZL17CFG_NMEA_FILT_GPS:
+ 239 0000 01       		.byte	1
+ 240 0001 93       		.byte	-109
+ 241 0002 1100     		.short	17
+ 242              		.section	.rodata._ZL18CFG_NMEA_FILT_SBAS,"a"
+ 243              		.align	2
+ 246              	_ZL18CFG_NMEA_FILT_SBAS:
+ 247 0000 01       		.byte	1
+ 248 0001 93       		.byte	-109
+ 249 0002 1200     		.short	18
+ 250              		.section	.rodata._ZL17CFG_NMEA_FILT_GAL,"a"
+ 251              		.align	2
+ 254              	_ZL17CFG_NMEA_FILT_GAL:
+ 255 0000 01       		.byte	1
+ 256 0001 93       		.byte	-109
+ 257 0002 1300     		.short	19
+ 258              		.section	.rodata._ZL18CFG_NMEA_FILT_QZSS,"a"
+ 259              		.align	2
+ 262              	_ZL18CFG_NMEA_FILT_QZSS:
+ 263 0000 01       		.byte	1
+ 264 0001 93       		.byte	-109
+ 265 0002 1500     		.short	21
+ 266              		.section	.rodata._ZL17CFG_NMEA_FILT_GLO,"a"
+ 267              		.align	2
+ 270              	_ZL17CFG_NMEA_FILT_GLO:
+ 271 0000 01       		.byte	1
+ 272 0001 93       		.byte	-109
+ 273 0002 1600     		.short	22
+ 274              		.section	.rodata._ZL17CFG_NMEA_FILT_BDS,"a"
+ 275              		.align	2
+ 278              	_ZL17CFG_NMEA_FILT_BDS:
+ 279 0000 01       		.byte	1
+ 280 0001 93       		.byte	-109
+ 281 0002 1700     		.short	23
+ 282              		.section	.rodata._ZL19CFG_NMEA_OUT_INVFIX,"a"
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 9
+
+
+ 283              		.align	2
+ 286              	_ZL19CFG_NMEA_OUT_INVFIX:
+ 287 0000 01       		.byte	1
+ 288 0001 93       		.byte	-109
+ 289 0002 2100     		.short	33
+ 290              		.section	.rodata._ZL19CFG_NMEA_OUT_MSKFIX,"a"
+ 291              		.align	2
+ 294              	_ZL19CFG_NMEA_OUT_MSKFIX:
+ 295 0000 01       		.byte	1
+ 296 0001 93       		.byte	-109
+ 297 0002 2200     		.short	34
+ 298              		.section	.rodata._ZL20CFG_NMEA_OUT_INVTIME,"a"
+ 299              		.align	2
+ 302              	_ZL20CFG_NMEA_OUT_INVTIME:
+ 303 0000 01       		.byte	1
+ 304 0001 93       		.byte	-109
+ 305 0002 2300     		.short	35
+ 306              		.section	.rodata._ZL20CFG_NMEA_OUT_INVDATE,"a"
+ 307              		.align	2
+ 310              	_ZL20CFG_NMEA_OUT_INVDATE:
+ 311 0000 01       		.byte	1
+ 312 0001 93       		.byte	-109
+ 313 0002 2400     		.short	36
+ 314              		.section	.rodata._ZL20CFG_NMEA_OUT_ONLYGPS,"a"
+ 315              		.align	2
+ 318              	_ZL20CFG_NMEA_OUT_ONLYGPS:
+ 319 0000 01       		.byte	1
+ 320 0001 93       		.byte	-109
+ 321 0002 2500     		.short	37
+ 322              		.section	.rodata._ZL22CFG_NMEA_OUT_FROZENCOG,"a"
+ 323              		.align	2
+ 326              	_ZL22CFG_NMEA_OUT_FROZENCOG:
+ 327 0000 01       		.byte	1
+ 328 0001 93       		.byte	-109
+ 329 0002 2600     		.short	38
+ 330              		.section	.rodata._ZL21CFG_NMEA_MAINTALKERID,"a"
+ 331              		.align	2
+ 334              	_ZL21CFG_NMEA_MAINTALKERID:
+ 335 0000 02       		.byte	2
+ 336 0001 93       		.byte	-109
+ 337 0002 3100     		.short	49
+ 338              		.section	.rodata._ZL20CFG_NMEA_GSVTALKERID,"a"
+ 339              		.align	2
+ 342              	_ZL20CFG_NMEA_GSVTALKERID:
+ 343 0000 02       		.byte	2
+ 344 0001 93       		.byte	-109
+ 345 0002 3200     		.short	50
+ 346              		.section	.rodata._ZL20CFG_NMEA_BDSTALKERID,"a"
+ 347              		.align	2
+ 350              	_ZL20CFG_NMEA_BDSTALKERID:
+ 351 0000 02       		.byte	2
+ 352 0001 93       		.byte	-109
+ 353 0002 3300     		.short	51
+ 354              		.global	huart4
+ 355              		.section	.bss.huart4,"aw",%nobits
+ 356              		.align	2
+ 359              	huart4:
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 10
+
+
+ 360 0000 00000000 		.space	144
+ 360      00000000 
+ 360      00000000 
+ 360      00000000 
+ 360      00000000 
+ 361              		.global	hdma_uart4_rx
+ 362              		.section	.bss.hdma_uart4_rx,"aw",%nobits
+ 363              		.align	2
+ 366              	hdma_uart4_rx:
+ 367 0000 00000000 		.space	96
+ 367      00000000 
+ 367      00000000 
+ 367      00000000 
+ 367      00000000 
+ 368              		.global	hdma_uart4_tx
+ 369              		.section	.bss.hdma_uart4_tx,"aw",%nobits
+ 370              		.align	2
+ 373              	hdma_uart4_tx:
+ 374 0000 00000000 		.space	96
+ 374      00000000 
+ 374      00000000 
+ 374      00000000 
+ 374      00000000 
+ 375              		.section	.text.main,"ax",%progbits
+ 376              		.align	1
+ 377              		.global	main
+ 378              		.syntax unified
+ 379              		.thumb
+ 380              		.thumb_func
+ 382              	main:
+ 383              		.fnstart
+ 384              	.LFB2240:
+ 385              		.file 2 "Core/Src/main.cpp"
+   1:Core/Src/main.cpp **** /* USER CODE BEGIN Header */
+   2:Core/Src/main.cpp **** /**
+   3:Core/Src/main.cpp ****   ******************************************************************************
+   4:Core/Src/main.cpp ****   * @file           : main.c
+   5:Core/Src/main.cpp ****   * @brief          : Main program body
+   6:Core/Src/main.cpp ****   ******************************************************************************
+   7:Core/Src/main.cpp ****   * @attention
+   8:Core/Src/main.cpp ****   *
+   9:Core/Src/main.cpp ****   * Copyright (c) 2022 STMicroelectronics.
+  10:Core/Src/main.cpp ****   * All rights reserved.
+  11:Core/Src/main.cpp ****   *
+  12:Core/Src/main.cpp ****   * This software is licensed under terms that can be found in the LICENSE file
+  13:Core/Src/main.cpp ****   * in the root directory of this software component.
+  14:Core/Src/main.cpp ****   * If no LICENSE file comes with this software, it is provided AS-IS.
+  15:Core/Src/main.cpp ****   *
+  16:Core/Src/main.cpp ****   ******************************************************************************
+  17:Core/Src/main.cpp ****   */
+  18:Core/Src/main.cpp **** /* USER CODE END Header */
+  19:Core/Src/main.cpp **** /* Includes ------------------------------------------------------------------*/
+  20:Core/Src/main.cpp **** #include "main.h"
+  21:Core/Src/main.cpp **** 
+  22:Core/Src/main.cpp **** /* Private includes ----------------------------------------------------------*/
+  23:Core/Src/main.cpp **** /* USER CODE BEGIN Includes */
+  24:Core/Src/main.cpp **** #include "M9N_STM32.hpp"
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 11
+
+
+  25:Core/Src/main.cpp **** #include "M9N_C_API.hpp"
+  26:Core/Src/main.cpp **** /* USER CODE END Includes */
+  27:Core/Src/main.cpp **** 
+  28:Core/Src/main.cpp **** /* Private typedef -----------------------------------------------------------*/
+  29:Core/Src/main.cpp **** /* USER CODE BEGIN PTD */
+  30:Core/Src/main.cpp **** 
+  31:Core/Src/main.cpp **** /* USER CODE END PTD */
+  32:Core/Src/main.cpp **** 
+  33:Core/Src/main.cpp **** /* Private define ------------------------------------------------------------*/
+  34:Core/Src/main.cpp **** /* USER CODE BEGIN PD */
+  35:Core/Src/main.cpp **** /* USER CODE END PD */
+  36:Core/Src/main.cpp **** 
+  37:Core/Src/main.cpp **** /* Private macro -------------------------------------------------------------*/
+  38:Core/Src/main.cpp **** /* USER CODE BEGIN PM */
+  39:Core/Src/main.cpp **** 
+  40:Core/Src/main.cpp **** /* USER CODE END PM */
+  41:Core/Src/main.cpp **** 
+  42:Core/Src/main.cpp **** /* Private variables ---------------------------------------------------------*/
+  43:Core/Src/main.cpp ****  UART_HandleTypeDef huart4;
+  44:Core/Src/main.cpp **** DMA_HandleTypeDef hdma_uart4_rx;
+  45:Core/Src/main.cpp **** DMA_HandleTypeDef hdma_uart4_tx;
+  46:Core/Src/main.cpp **** 
+  47:Core/Src/main.cpp **** /* USER CODE BEGIN PV */
+  48:Core/Src/main.cpp **** 
+  49:Core/Src/main.cpp **** /* USER CODE END PV */
+  50:Core/Src/main.cpp **** 
+  51:Core/Src/main.cpp **** /* Private function prototypes -----------------------------------------------*/
+  52:Core/Src/main.cpp **** void SystemClock_Config(void);
+  53:Core/Src/main.cpp **** static void MX_GPIO_Init(void);
+  54:Core/Src/main.cpp **** static void MX_DMA_Init(void);
+  55:Core/Src/main.cpp **** static void MX_UART4_Init(void);
+  56:Core/Src/main.cpp **** /* USER CODE BEGIN PFP */
+  57:Core/Src/main.cpp **** 
+  58:Core/Src/main.cpp **** /* USER CODE END PFP */
+  59:Core/Src/main.cpp **** 
+  60:Core/Src/main.cpp **** /* Private user code ---------------------------------------------------------*/
+  61:Core/Src/main.cpp **** /* USER CODE BEGIN 0 */
+  62:Core/Src/main.cpp **** int main(){
+ 386              		.loc 2 62 11
+ 387              		.cfi_startproc
+ 388              		@ args = 0, pretend = 0, frame = 0
+ 389              		@ frame_needed = 1, uses_anonymous_args = 0
+ 390 0000 80B5     		push	{r7, lr}
+ 391              		.save {r7, lr}
+ 392              		.cfi_def_cfa_offset 8
+ 393              		.cfi_offset 7, -8
+ 394              		.cfi_offset 14, -4
+ 395              		.setfp r7, sp, #0
+ 396 0002 00AF     		add	r7, sp, #0
+ 397              		.cfi_def_cfa_register 7
+  63:Core/Src/main.cpp **** 	HAL_Init();
+ 398              		.loc 2 63 10
+ 399 0004 FFF7FEFF 		bl	HAL_Init
+  64:Core/Src/main.cpp **** 	SystemClock_Config();
+ 400              		.loc 2 64 20
+ 401 0008 FFF7FEFF 		bl	_Z18SystemClock_Configv
+  65:Core/Src/main.cpp **** 	MX_GPIO_Init();
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 12
+
+
+ 402              		.loc 2 65 14
+ 403 000c FFF7FEFF 		bl	_ZL12MX_GPIO_Initv
+  66:Core/Src/main.cpp **** 	MX_DMA_Init();
+ 404              		.loc 2 66 13
+ 405 0010 FFF7FEFF 		bl	_ZL11MX_DMA_Initv
+  67:Core/Src/main.cpp **** 	MX_UART4_Init();
+ 406              		.loc 2 67 15
+ 407 0014 FFF7FEFF 		bl	_ZL13MX_UART4_Initv
+  68:Core/Src/main.cpp **** 
+  69:Core/Src/main.cpp **** 	GPS_Init();
+ 408              		.loc 2 69 10
+ 409 0018 FFF7FEFF 		bl	_Z8GPS_Initv
+ 410              	.L4:
+  70:Core/Src/main.cpp **** 
+  71:Core/Src/main.cpp **** 	while(true){
+  72:Core/Src/main.cpp **** 		HAL_Delay(100);
+ 411              		.loc 2 72 12 discriminator 1
+ 412 001c 6420     		movs	r0, #100
+ 413 001e FFF7FEFF 		bl	HAL_Delay
+  73:Core/Src/main.cpp **** 		GPS_Update(nullptr);
+ 414              		.loc 2 73 13 discriminator 1
+ 415 0022 0020     		movs	r0, #0
+ 416 0024 FFF7FEFF 		bl	GPS_Update
+  72:Core/Src/main.cpp **** 		GPS_Update(nullptr);
+ 417              		.loc 2 72 12 discriminator 1
+ 418 0028 F8E7     		b	.L4
+ 419              		.cfi_endproc
+ 420              	.LFE2240:
+ 421              		.fnend
+ 423              		.section	.text._Z18SystemClock_Configv,"ax",%progbits
+ 424              		.align	1
+ 425              		.global	_Z18SystemClock_Configv
+ 426              		.syntax unified
+ 427              		.thumb
+ 428              		.thumb_func
+ 430              	_Z18SystemClock_Configv:
+ 431              		.fnstart
+ 432              	.LFB2241:
+  74:Core/Src/main.cpp **** 	}
+  75:Core/Src/main.cpp **** }
+  76:Core/Src/main.cpp **** /* USER CODE END 0 */
+  77:Core/Src/main.cpp **** 
+  78:Core/Src/main.cpp **** /**
+  79:Core/Src/main.cpp ****   * @brief  The application entry point.
+  80:Core/Src/main.cpp ****   * @retval int
+  81:Core/Src/main.cpp ****   */
+  82:Core/Src/main.cpp **** 
+  83:Core/Src/main.cpp **** /**
+  84:Core/Src/main.cpp ****   * @brief System Clock Configuration
+  85:Core/Src/main.cpp ****   * @retval None
+  86:Core/Src/main.cpp ****   */
+  87:Core/Src/main.cpp **** void SystemClock_Config(void)
+  88:Core/Src/main.cpp **** {
+ 433              		.loc 2 88 1
+ 434              		.cfi_startproc
+ 435              		@ args = 0, pretend = 0, frame = 88
+ 436              		@ frame_needed = 1, uses_anonymous_args = 0
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 13
+
+
+ 437 0000 80B5     		push	{r7, lr}
+ 438              		.save {r7, lr}
+ 439              		.cfi_def_cfa_offset 8
+ 440              		.cfi_offset 7, -8
+ 441              		.cfi_offset 14, -4
+ 442              		.pad #88
+ 443 0002 96B0     		sub	sp, sp, #88
+ 444              		.cfi_def_cfa_offset 96
+ 445              		.setfp r7, sp, #0
+ 446 0004 00AF     		add	r7, sp, #0
+ 447              		.cfi_def_cfa_register 7
+  89:Core/Src/main.cpp ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+ 448              		.loc 2 89 22
+ 449 0006 07F11403 		add	r3, r7, #20
+ 450 000a 4422     		movs	r2, #68
+ 451 000c 0021     		movs	r1, #0
+ 452 000e 1846     		mov	r0, r3
+ 453 0010 FFF7FEFF 		bl	memset
+  90:Core/Src/main.cpp ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+ 454              		.loc 2 90 22
+ 455 0014 3B46     		mov	r3, r7
+ 456 0016 0022     		movs	r2, #0
+ 457 0018 1A60     		str	r2, [r3]
+ 458 001a 5A60     		str	r2, [r3, #4]
+ 459 001c 9A60     		str	r2, [r3, #8]
+ 460 001e DA60     		str	r2, [r3, #12]
+ 461 0020 1A61     		str	r2, [r3, #16]
+  91:Core/Src/main.cpp **** 
+  92:Core/Src/main.cpp ****   /** Configure the main internal regulator output voltage
+  93:Core/Src/main.cpp ****   */
+  94:Core/Src/main.cpp ****   if (HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE1) != HAL_OK)
+ 462              		.loc 2 94 38
+ 463 0022 4FF40070 		mov	r0, #512
+ 464 0026 FFF7FEFF 		bl	HAL_PWREx_ControlVoltageScaling
+ 465 002a 0346     		mov	r3, r0
+ 466              		.loc 2 94 69
+ 467 002c 002B     		cmp	r3, #0
+ 468 002e 14BF     		ite	ne
+ 469 0030 0123     		movne	r3, #1
+ 470 0032 0023     		moveq	r3, #0
+ 471 0034 DBB2     		uxtb	r3, r3
+ 472              		.loc 2 94 3
+ 473 0036 002B     		cmp	r3, #0
+ 474 0038 01D0     		beq	.L6
+  95:Core/Src/main.cpp ****   {
+  96:Core/Src/main.cpp ****     Error_Handler();
+ 475              		.loc 2 96 18
+ 476 003a FFF7FEFF 		bl	Error_Handler
+ 477              	.L6:
+  97:Core/Src/main.cpp ****   }
+  98:Core/Src/main.cpp **** 
+  99:Core/Src/main.cpp ****   /** Initializes the RCC Oscillators according to the specified parameters
+ 100:Core/Src/main.cpp ****   * in the RCC_OscInitTypeDef structure.
+ 101:Core/Src/main.cpp ****   */
+ 102:Core/Src/main.cpp ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+ 478              		.loc 2 102 36
+ 479 003e 0223     		movs	r3, #2
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 14
+
+
+ 480 0040 7B61     		str	r3, [r7, #20]
+ 103:Core/Src/main.cpp ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+ 481              		.loc 2 103 30
+ 482 0042 4FF48073 		mov	r3, #256
+ 483 0046 3B62     		str	r3, [r7, #32]
+ 104:Core/Src/main.cpp ****   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+ 484              		.loc 2 104 41
+ 485 0048 4023     		movs	r3, #64
+ 486 004a 7B62     		str	r3, [r7, #36]
+ 105:Core/Src/main.cpp ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+ 487              		.loc 2 105 34
+ 488 004c 0223     		movs	r3, #2
+ 489 004e FB63     		str	r3, [r7, #60]
+ 106:Core/Src/main.cpp ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
+ 490              		.loc 2 106 35
+ 491 0050 0223     		movs	r3, #2
+ 492 0052 3B64     		str	r3, [r7, #64]
+ 107:Core/Src/main.cpp ****   RCC_OscInitStruct.PLL.PLLM = 2;
+ 493              		.loc 2 107 30
+ 494 0054 0223     		movs	r3, #2
+ 495 0056 7B64     		str	r3, [r7, #68]
+ 108:Core/Src/main.cpp ****   RCC_OscInitStruct.PLL.PLLN = 16;
+ 496              		.loc 2 108 30
+ 497 0058 1023     		movs	r3, #16
+ 498 005a BB64     		str	r3, [r7, #72]
+ 109:Core/Src/main.cpp ****   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
+ 499              		.loc 2 109 30
+ 500 005c 0223     		movs	r3, #2
+ 501 005e FB64     		str	r3, [r7, #76]
+ 110:Core/Src/main.cpp ****   RCC_OscInitStruct.PLL.PLLQ = RCC_PLLQ_DIV2;
+ 502              		.loc 2 110 30
+ 503 0060 0223     		movs	r3, #2
+ 504 0062 3B65     		str	r3, [r7, #80]
+ 111:Core/Src/main.cpp ****   RCC_OscInitStruct.PLL.PLLR = RCC_PLLR_DIV2;
+ 505              		.loc 2 111 30
+ 506 0064 0223     		movs	r3, #2
+ 507 0066 7B65     		str	r3, [r7, #84]
+ 112:Core/Src/main.cpp ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 508              		.loc 2 112 24
+ 509 0068 07F11403 		add	r3, r7, #20
+ 510 006c 1846     		mov	r0, r3
+ 511 006e FFF7FEFF 		bl	HAL_RCC_OscConfig
+ 512 0072 0346     		mov	r3, r0
+ 513              		.loc 2 112 45
+ 514 0074 002B     		cmp	r3, #0
+ 515 0076 14BF     		ite	ne
+ 516 0078 0123     		movne	r3, #1
+ 517 007a 0023     		moveq	r3, #0
+ 518 007c DBB2     		uxtb	r3, r3
+ 519              		.loc 2 112 3
+ 520 007e 002B     		cmp	r3, #0
+ 521 0080 01D0     		beq	.L7
+ 113:Core/Src/main.cpp ****   {
+ 114:Core/Src/main.cpp ****     Error_Handler();
+ 522              		.loc 2 114 18
+ 523 0082 FFF7FEFF 		bl	Error_Handler
+ 524              	.L7:
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 15
+
+
+ 115:Core/Src/main.cpp ****   }
+ 116:Core/Src/main.cpp **** 
+ 117:Core/Src/main.cpp ****   /** Initializes the CPU, AHB and APB buses clocks
+ 118:Core/Src/main.cpp ****   */
+ 119:Core/Src/main.cpp ****   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+ 525              		.loc 2 119 31
+ 526 0086 0F23     		movs	r3, #15
+ 527 0088 3B60     		str	r3, [r7]
+ 120:Core/Src/main.cpp ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+ 121:Core/Src/main.cpp ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+ 528              		.loc 2 121 34
+ 529 008a 0323     		movs	r3, #3
+ 530 008c 7B60     		str	r3, [r7, #4]
+ 122:Core/Src/main.cpp ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 531              		.loc 2 122 35
+ 532 008e 0023     		movs	r3, #0
+ 533 0090 BB60     		str	r3, [r7, #8]
+ 123:Core/Src/main.cpp ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+ 534              		.loc 2 123 36
+ 535 0092 0023     		movs	r3, #0
+ 536 0094 FB60     		str	r3, [r7, #12]
+ 124:Core/Src/main.cpp ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+ 537              		.loc 2 124 36
+ 538 0096 0023     		movs	r3, #0
+ 539 0098 3B61     		str	r3, [r7, #16]
+ 125:Core/Src/main.cpp **** 
+ 126:Core/Src/main.cpp ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_3) != HAL_OK)
+ 540              		.loc 2 126 26
+ 541 009a 3B46     		mov	r3, r7
+ 542 009c 0321     		movs	r1, #3
+ 543 009e 1846     		mov	r0, r3
+ 544 00a0 FFF7FEFF 		bl	HAL_RCC_ClockConfig
+ 545 00a4 0346     		mov	r3, r0
+ 546              		.loc 2 126 64
+ 547 00a6 002B     		cmp	r3, #0
+ 548 00a8 14BF     		ite	ne
+ 549 00aa 0123     		movne	r3, #1
+ 550 00ac 0023     		moveq	r3, #0
+ 551 00ae DBB2     		uxtb	r3, r3
+ 552              		.loc 2 126 3
+ 553 00b0 002B     		cmp	r3, #0
+ 554 00b2 01D0     		beq	.L9
+ 127:Core/Src/main.cpp ****   {
+ 128:Core/Src/main.cpp ****     Error_Handler();
+ 555              		.loc 2 128 18
+ 556 00b4 FFF7FEFF 		bl	Error_Handler
+ 557              	.L9:
+ 129:Core/Src/main.cpp ****   }
+ 130:Core/Src/main.cpp **** }
+ 558              		.loc 2 130 1
+ 559 00b8 00BF     		nop
+ 560 00ba 5837     		adds	r7, r7, #88
+ 561              		.cfi_def_cfa_offset 8
+ 562 00bc BD46     		mov	sp, r7
+ 563              		.cfi_def_cfa_register 13
+ 564              		@ sp needed
+ 565 00be 80BD     		pop	{r7, pc}
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 16
+
+
+ 566              		.cfi_endproc
+ 567              	.LFE2241:
+ 568              		.fnend
+ 570              		.section	.text._ZL13MX_UART4_Initv,"ax",%progbits
+ 571              		.align	1
+ 572              		.syntax unified
+ 573              		.thumb
+ 574              		.thumb_func
+ 576              	_ZL13MX_UART4_Initv:
+ 577              		.fnstart
+ 578              	.LFB2242:
+ 131:Core/Src/main.cpp **** 
+ 132:Core/Src/main.cpp **** /**
+ 133:Core/Src/main.cpp ****   * @brief UART4 Initialization Function
+ 134:Core/Src/main.cpp ****   * @param None
+ 135:Core/Src/main.cpp ****   * @retval None
+ 136:Core/Src/main.cpp ****   */
+ 137:Core/Src/main.cpp **** static void MX_UART4_Init(void)
+ 138:Core/Src/main.cpp **** {
+ 579              		.loc 2 138 1
+ 580              		.cfi_startproc
+ 581              		@ args = 0, pretend = 0, frame = 0
+ 582              		@ frame_needed = 1, uses_anonymous_args = 0
+ 583 0000 80B5     		push	{r7, lr}
+ 584              		.save {r7, lr}
+ 585              		.cfi_def_cfa_offset 8
+ 586              		.cfi_offset 7, -8
+ 587              		.cfi_offset 14, -4
+ 588              		.setfp r7, sp, #0
+ 589 0002 00AF     		add	r7, sp, #0
+ 590              		.cfi_def_cfa_register 7
+ 139:Core/Src/main.cpp **** 
+ 140:Core/Src/main.cpp ****   /* USER CODE BEGIN UART4_Init 0 */
+ 141:Core/Src/main.cpp **** 
+ 142:Core/Src/main.cpp ****   /* USER CODE END UART4_Init 0 */
+ 143:Core/Src/main.cpp **** 
+ 144:Core/Src/main.cpp ****   /* USER CODE BEGIN UART4_Init 1 */
+ 145:Core/Src/main.cpp **** 
+ 146:Core/Src/main.cpp ****   /* USER CODE END UART4_Init 1 */
+ 147:Core/Src/main.cpp ****   huart4.Instance = UART4;
+ 591              		.loc 2 147 19
+ 592 0004 2D4B     		ldr	r3, .L16
+ 593 0006 2E4A     		ldr	r2, .L16+4
+ 594 0008 1A60     		str	r2, [r3]
+ 148:Core/Src/main.cpp ****   huart4.Init.BaudRate = 38400;
+ 595              		.loc 2 148 24
+ 596 000a 2C4B     		ldr	r3, .L16
+ 597 000c 4FF41642 		mov	r2, #38400
+ 598 0010 5A60     		str	r2, [r3, #4]
+ 149:Core/Src/main.cpp ****   huart4.Init.WordLength = UART_WORDLENGTH_8B;
+ 599              		.loc 2 149 26
+ 600 0012 2A4B     		ldr	r3, .L16
+ 601 0014 0022     		movs	r2, #0
+ 602 0016 9A60     		str	r2, [r3, #8]
+ 150:Core/Src/main.cpp ****   huart4.Init.StopBits = UART_STOPBITS_1;
+ 603              		.loc 2 150 24
+ 604 0018 284B     		ldr	r3, .L16
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 17
+
+
+ 605 001a 0022     		movs	r2, #0
+ 606 001c DA60     		str	r2, [r3, #12]
+ 151:Core/Src/main.cpp ****   huart4.Init.Parity = UART_PARITY_NONE;
+ 607              		.loc 2 151 22
+ 608 001e 274B     		ldr	r3, .L16
+ 609 0020 0022     		movs	r2, #0
+ 610 0022 1A61     		str	r2, [r3, #16]
+ 152:Core/Src/main.cpp ****   huart4.Init.Mode = UART_MODE_TX_RX;
+ 611              		.loc 2 152 20
+ 612 0024 254B     		ldr	r3, .L16
+ 613 0026 0C22     		movs	r2, #12
+ 614 0028 5A61     		str	r2, [r3, #20]
+ 153:Core/Src/main.cpp ****   huart4.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+ 615              		.loc 2 153 25
+ 616 002a 244B     		ldr	r3, .L16
+ 617 002c 0022     		movs	r2, #0
+ 618 002e 9A61     		str	r2, [r3, #24]
+ 154:Core/Src/main.cpp ****   huart4.Init.OverSampling = UART_OVERSAMPLING_16;
+ 619              		.loc 2 154 28
+ 620 0030 224B     		ldr	r3, .L16
+ 621 0032 0022     		movs	r2, #0
+ 622 0034 DA61     		str	r2, [r3, #28]
+ 155:Core/Src/main.cpp ****   huart4.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
+ 623              		.loc 2 155 30
+ 624 0036 214B     		ldr	r3, .L16
+ 625 0038 0022     		movs	r2, #0
+ 626 003a 1A62     		str	r2, [r3, #32]
+ 156:Core/Src/main.cpp ****   huart4.Init.ClockPrescaler = UART_PRESCALER_DIV1;
+ 627              		.loc 2 156 30
+ 628 003c 1F4B     		ldr	r3, .L16
+ 629 003e 0022     		movs	r2, #0
+ 630 0040 5A62     		str	r2, [r3, #36]
+ 157:Core/Src/main.cpp ****   huart4.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
+ 631              		.loc 2 157 38
+ 632 0042 1E4B     		ldr	r3, .L16
+ 633 0044 0022     		movs	r2, #0
+ 634 0046 9A62     		str	r2, [r3, #40]
+ 158:Core/Src/main.cpp ****   if (HAL_UART_Init(&huart4) != HAL_OK)
+ 635              		.loc 2 158 20
+ 636 0048 1C48     		ldr	r0, .L16
+ 637 004a FFF7FEFF 		bl	HAL_UART_Init
+ 638 004e 0346     		mov	r3, r0
+ 639              		.loc 2 158 30
+ 640 0050 002B     		cmp	r3, #0
+ 641 0052 14BF     		ite	ne
+ 642 0054 0123     		movne	r3, #1
+ 643 0056 0023     		moveq	r3, #0
+ 644 0058 DBB2     		uxtb	r3, r3
+ 645              		.loc 2 158 3
+ 646 005a 002B     		cmp	r3, #0
+ 647 005c 01D0     		beq	.L11
+ 159:Core/Src/main.cpp ****   {
+ 160:Core/Src/main.cpp ****     Error_Handler();
+ 648              		.loc 2 160 18
+ 649 005e FFF7FEFF 		bl	Error_Handler
+ 650              	.L11:
+ 161:Core/Src/main.cpp ****   }
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 18
+
+
+ 162:Core/Src/main.cpp ****   if (HAL_UARTEx_SetTxFifoThreshold(&huart4, UART_TXFIFO_THRESHOLD_1_8) != HAL_OK)
+ 651              		.loc 2 162 36
+ 652 0062 0021     		movs	r1, #0
+ 653 0064 1548     		ldr	r0, .L16
+ 654 0066 FFF7FEFF 		bl	HAL_UARTEx_SetTxFifoThreshold
+ 655 006a 0346     		mov	r3, r0
+ 656              		.loc 2 162 73
+ 657 006c 002B     		cmp	r3, #0
+ 658 006e 14BF     		ite	ne
+ 659 0070 0123     		movne	r3, #1
+ 660 0072 0023     		moveq	r3, #0
+ 661 0074 DBB2     		uxtb	r3, r3
+ 662              		.loc 2 162 3
+ 663 0076 002B     		cmp	r3, #0
+ 664 0078 01D0     		beq	.L12
+ 163:Core/Src/main.cpp ****   {
+ 164:Core/Src/main.cpp ****     Error_Handler();
+ 665              		.loc 2 164 18
+ 666 007a FFF7FEFF 		bl	Error_Handler
+ 667              	.L12:
+ 165:Core/Src/main.cpp ****   }
+ 166:Core/Src/main.cpp ****   if (HAL_UARTEx_SetRxFifoThreshold(&huart4, UART_RXFIFO_THRESHOLD_1_2) != HAL_OK)
+ 668              		.loc 2 166 36
+ 669 007e 4FF08061 		mov	r1, #67108864
+ 670 0082 0E48     		ldr	r0, .L16
+ 671 0084 FFF7FEFF 		bl	HAL_UARTEx_SetRxFifoThreshold
+ 672 0088 0346     		mov	r3, r0
+ 673              		.loc 2 166 73
+ 674 008a 002B     		cmp	r3, #0
+ 675 008c 14BF     		ite	ne
+ 676 008e 0123     		movne	r3, #1
+ 677 0090 0023     		moveq	r3, #0
+ 678 0092 DBB2     		uxtb	r3, r3
+ 679              		.loc 2 166 3
+ 680 0094 002B     		cmp	r3, #0
+ 681 0096 01D0     		beq	.L13
+ 167:Core/Src/main.cpp ****   {
+ 168:Core/Src/main.cpp ****     Error_Handler();
+ 682              		.loc 2 168 18
+ 683 0098 FFF7FEFF 		bl	Error_Handler
+ 684              	.L13:
+ 169:Core/Src/main.cpp ****   }
+ 170:Core/Src/main.cpp ****   if (HAL_UARTEx_EnableFifoMode(&huart4) != HAL_OK)
+ 685              		.loc 2 170 32
+ 686 009c 0748     		ldr	r0, .L16
+ 687 009e FFF7FEFF 		bl	HAL_UARTEx_EnableFifoMode
+ 688 00a2 0346     		mov	r3, r0
+ 689              		.loc 2 170 42
+ 690 00a4 002B     		cmp	r3, #0
+ 691 00a6 14BF     		ite	ne
+ 692 00a8 0123     		movne	r3, #1
+ 693 00aa 0023     		moveq	r3, #0
+ 694 00ac DBB2     		uxtb	r3, r3
+ 695              		.loc 2 170 3
+ 696 00ae 002B     		cmp	r3, #0
+ 697 00b0 01D0     		beq	.L15
+ 171:Core/Src/main.cpp ****   {
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 19
+
+
+ 172:Core/Src/main.cpp ****     Error_Handler();
+ 698              		.loc 2 172 18
+ 699 00b2 FFF7FEFF 		bl	Error_Handler
+ 700              	.L15:
+ 173:Core/Src/main.cpp ****   }
+ 174:Core/Src/main.cpp ****   /* USER CODE BEGIN UART4_Init 2 */
+ 175:Core/Src/main.cpp **** 
+ 176:Core/Src/main.cpp ****   /* USER CODE END UART4_Init 2 */
+ 177:Core/Src/main.cpp **** 
+ 178:Core/Src/main.cpp **** }
+ 701              		.loc 2 178 1
+ 702 00b6 00BF     		nop
+ 703 00b8 80BD     		pop	{r7, pc}
+ 704              	.L17:
+ 705 00ba 00BF     		.align	2
+ 706              	.L16:
+ 707 00bc 00000000 		.word	huart4
+ 708 00c0 004C0040 		.word	1073761280
+ 709              		.cfi_endproc
+ 710              	.LFE2242:
+ 711              		.fnend
+ 713              		.section	.text._ZL11MX_DMA_Initv,"ax",%progbits
+ 714              		.align	1
+ 715              		.syntax unified
+ 716              		.thumb
+ 717              		.thumb_func
+ 719              	_ZL11MX_DMA_Initv:
+ 720              		.fnstart
+ 721              	.LFB2243:
+ 179:Core/Src/main.cpp **** 
+ 180:Core/Src/main.cpp **** /**
+ 181:Core/Src/main.cpp ****   * Enable DMA controller clock
+ 182:Core/Src/main.cpp ****   */
+ 183:Core/Src/main.cpp **** static void MX_DMA_Init(void)
+ 184:Core/Src/main.cpp **** {
+ 722              		.loc 2 184 1
+ 723              		.cfi_startproc
+ 724              		@ args = 0, pretend = 0, frame = 8
+ 725              		@ frame_needed = 1, uses_anonymous_args = 0
+ 726 0000 80B5     		push	{r7, lr}
+ 727              		.save {r7, lr}
+ 728              		.cfi_def_cfa_offset 8
+ 729              		.cfi_offset 7, -8
+ 730              		.cfi_offset 14, -4
+ 731              		.pad #8
+ 732 0002 82B0     		sub	sp, sp, #8
+ 733              		.cfi_def_cfa_offset 16
+ 734              		.setfp r7, sp, #0
+ 735 0004 00AF     		add	r7, sp, #0
+ 736              		.cfi_def_cfa_register 7
+ 737              	.LBB4:
+ 185:Core/Src/main.cpp **** 
+ 186:Core/Src/main.cpp ****   /* DMA controller clock enable */
+ 187:Core/Src/main.cpp ****   __HAL_RCC_DMAMUX1_CLK_ENABLE();
+ 738              		.loc 2 187 3
+ 739 0006 164B     		ldr	r3, .L19
+ 740 0008 9B6C     		ldr	r3, [r3, #72]
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 20
+
+
+ 741 000a 154A     		ldr	r2, .L19
+ 742 000c 43F00403 		orr	r3, r3, #4
+ 743 0010 9364     		str	r3, [r2, #72]
+ 744 0012 134B     		ldr	r3, .L19
+ 745 0014 9B6C     		ldr	r3, [r3, #72]
+ 746 0016 03F00403 		and	r3, r3, #4
+ 747 001a 7B60     		str	r3, [r7, #4]
+ 748 001c 7B68     		ldr	r3, [r7, #4]
+ 749              	.LBE4:
+ 750              	.LBB5:
+ 188:Core/Src/main.cpp ****   __HAL_RCC_DMA1_CLK_ENABLE();
+ 751              		.loc 2 188 3
+ 752 001e 104B     		ldr	r3, .L19
+ 753 0020 9B6C     		ldr	r3, [r3, #72]
+ 754 0022 0F4A     		ldr	r2, .L19
+ 755 0024 43F00103 		orr	r3, r3, #1
+ 756 0028 9364     		str	r3, [r2, #72]
+ 757 002a 0D4B     		ldr	r3, .L19
+ 758 002c 9B6C     		ldr	r3, [r3, #72]
+ 759 002e 03F00103 		and	r3, r3, #1
+ 760 0032 3B60     		str	r3, [r7]
+ 761 0034 3B68     		ldr	r3, [r7]
+ 762              	.LBE5:
+ 189:Core/Src/main.cpp **** 
+ 190:Core/Src/main.cpp ****   /* DMA interrupt init */
+ 191:Core/Src/main.cpp ****   /* DMA1_Channel1_IRQn interrupt configuration */
+ 192:Core/Src/main.cpp ****   HAL_NVIC_SetPriority(DMA1_Channel1_IRQn, 6, 0);
+ 763              		.loc 2 192 23
+ 764 0036 0022     		movs	r2, #0
+ 765 0038 0621     		movs	r1, #6
+ 766 003a 0B20     		movs	r0, #11
+ 767 003c FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 193:Core/Src/main.cpp ****   HAL_NVIC_EnableIRQ(DMA1_Channel1_IRQn);
+ 768              		.loc 2 193 21
+ 769 0040 0B20     		movs	r0, #11
+ 770 0042 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 194:Core/Src/main.cpp ****   /* DMA1_Channel2_IRQn interrupt configuration */
+ 195:Core/Src/main.cpp ****   HAL_NVIC_SetPriority(DMA1_Channel2_IRQn, 7, 0);
+ 771              		.loc 2 195 23
+ 772 0046 0022     		movs	r2, #0
+ 773 0048 0721     		movs	r1, #7
+ 774 004a 0C20     		movs	r0, #12
+ 775 004c FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 196:Core/Src/main.cpp ****   HAL_NVIC_EnableIRQ(DMA1_Channel2_IRQn);
+ 776              		.loc 2 196 21
+ 777 0050 0C20     		movs	r0, #12
+ 778 0052 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 197:Core/Src/main.cpp **** 
+ 198:Core/Src/main.cpp **** }
+ 779              		.loc 2 198 1
+ 780 0056 00BF     		nop
+ 781 0058 0837     		adds	r7, r7, #8
+ 782              		.cfi_def_cfa_offset 8
+ 783 005a BD46     		mov	sp, r7
+ 784              		.cfi_def_cfa_register 13
+ 785              		@ sp needed
+ 786 005c 80BD     		pop	{r7, pc}
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 21
+
+
+ 787              	.L20:
+ 788 005e 00BF     		.align	2
+ 789              	.L19:
+ 790 0060 00100240 		.word	1073876992
+ 791              		.cfi_endproc
+ 792              	.LFE2243:
+ 793              		.fnend
+ 795              		.section	.text._ZL12MX_GPIO_Initv,"ax",%progbits
+ 796              		.align	1
+ 797              		.syntax unified
+ 798              		.thumb
+ 799              		.thumb_func
+ 801              	_ZL12MX_GPIO_Initv:
+ 802              		.fnstart
+ 803              	.LFB2244:
+ 199:Core/Src/main.cpp **** 
+ 200:Core/Src/main.cpp **** /**
+ 201:Core/Src/main.cpp ****   * @brief GPIO Initialization Function
+ 202:Core/Src/main.cpp ****   * @param None
+ 203:Core/Src/main.cpp ****   * @retval None
+ 204:Core/Src/main.cpp ****   */
+ 205:Core/Src/main.cpp **** static void MX_GPIO_Init(void)
+ 206:Core/Src/main.cpp **** {
+ 804              		.loc 2 206 1
+ 805              		.cfi_startproc
+ 806              		@ args = 0, pretend = 0, frame = 8
+ 807              		@ frame_needed = 1, uses_anonymous_args = 0
+ 808              		@ link register save eliminated.
+ 809 0000 80B4     		push	{r7}
+ 810              		.cfi_def_cfa_offset 4
+ 811              		.cfi_offset 7, -4
+ 812 0002 83B0     		sub	sp, sp, #12
+ 813              		.cfi_def_cfa_offset 16
+ 814 0004 00AF     		add	r7, sp, #0
+ 815              		.cfi_def_cfa_register 7
+ 816              	.LBB6:
+ 207:Core/Src/main.cpp **** 
+ 208:Core/Src/main.cpp ****   /* GPIO Ports Clock Enable */
+ 209:Core/Src/main.cpp ****   __HAL_RCC_GPIOA_CLK_ENABLE();
+ 817              		.loc 2 209 3
+ 818 0006 094B     		ldr	r3, .L22
+ 819 0008 DB6C     		ldr	r3, [r3, #76]
+ 820 000a 084A     		ldr	r2, .L22
+ 821 000c 43F00103 		orr	r3, r3, #1
+ 822 0010 D364     		str	r3, [r2, #76]
+ 823 0012 064B     		ldr	r3, .L22
+ 824 0014 DB6C     		ldr	r3, [r3, #76]
+ 825 0016 03F00103 		and	r3, r3, #1
+ 826 001a 7B60     		str	r3, [r7, #4]
+ 827 001c 7B68     		ldr	r3, [r7, #4]
+ 828              	.LBE6:
+ 210:Core/Src/main.cpp **** 
+ 211:Core/Src/main.cpp **** }
+ 829              		.loc 2 211 1
+ 830 001e 00BF     		nop
+ 831 0020 0C37     		adds	r7, r7, #12
+ 832              		.cfi_def_cfa_offset 4
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 22
+
+
+ 833 0022 BD46     		mov	sp, r7
+ 834              		.cfi_def_cfa_register 13
+ 835              		@ sp needed
+ 836 0024 5DF8047B 		ldr	r7, [sp], #4
+ 837              		.cfi_restore 7
+ 838              		.cfi_def_cfa_offset 0
+ 839 0028 7047     		bx	lr
+ 840              	.L23:
+ 841 002a 00BF     		.align	2
+ 842              	.L22:
+ 843 002c 00100240 		.word	1073876992
+ 844              		.cfi_endproc
+ 845              	.LFE2244:
+ 846              		.cantunwind
+ 847              		.fnend
+ 849              		.section	.text.Error_Handler,"ax",%progbits
+ 850              		.align	1
+ 851              		.global	Error_Handler
+ 852              		.syntax unified
+ 853              		.thumb
+ 854              		.thumb_func
+ 856              	Error_Handler:
+ 857              		.fnstart
+ 858              	.LFB2245:
+ 212:Core/Src/main.cpp **** 
+ 213:Core/Src/main.cpp **** /* USER CODE BEGIN 4 */
+ 214:Core/Src/main.cpp **** 
+ 215:Core/Src/main.cpp **** /* USER CODE END 4 */
+ 216:Core/Src/main.cpp **** 
+ 217:Core/Src/main.cpp **** /**
+ 218:Core/Src/main.cpp ****   * @brief  This function is executed in case of error occurrence.
+ 219:Core/Src/main.cpp ****   * @retval None
+ 220:Core/Src/main.cpp ****   */
+ 221:Core/Src/main.cpp **** void Error_Handler(void)
+ 222:Core/Src/main.cpp **** {
+ 859              		.loc 2 222 1
+ 860              		.cfi_startproc
+ 861              		@ args = 0, pretend = 0, frame = 0
+ 862              		@ frame_needed = 1, uses_anonymous_args = 0
+ 863              		@ link register save eliminated.
+ 864 0000 80B4     		push	{r7}
+ 865              		.cfi_def_cfa_offset 4
+ 866              		.cfi_offset 7, -4
+ 867 0002 00AF     		add	r7, sp, #0
+ 868              		.cfi_def_cfa_register 7
+ 869              	.LBB7:
+ 870              	.LBB8:
+ 871              		.file 3 "Drivers/CMSIS/Include/cmsis_gcc.h"
+   1:Drivers/CMSIS/Include/cmsis_gcc.h **** /**************************************************************************//**
+   2:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @file     cmsis_gcc.h
+   3:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @brief    CMSIS compiler GCC header file
+   4:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @version  V5.2.0
+   5:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @date     08. May 2019
+   6:Drivers/CMSIS/Include/cmsis_gcc.h ****  ******************************************************************************/
+   7:Drivers/CMSIS/Include/cmsis_gcc.h **** /*
+   8:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Copyright (c) 2009-2019 Arm Limited. All rights reserved.
+   9:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 23
+
+
+  10:Drivers/CMSIS/Include/cmsis_gcc.h ****  * SPDX-License-Identifier: Apache-2.0
+  11:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
+  12:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Licensed under the Apache License, Version 2.0 (the License); you may
+  13:Drivers/CMSIS/Include/cmsis_gcc.h ****  * not use this file except in compliance with the License.
+  14:Drivers/CMSIS/Include/cmsis_gcc.h ****  * You may obtain a copy of the License at
+  15:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
+  16:Drivers/CMSIS/Include/cmsis_gcc.h ****  * www.apache.org/licenses/LICENSE-2.0
+  17:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
+  18:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Unless required by applicable law or agreed to in writing, software
+  19:Drivers/CMSIS/Include/cmsis_gcc.h ****  * distributed under the License is distributed on an AS IS BASIS, WITHOUT
+  20:Drivers/CMSIS/Include/cmsis_gcc.h ****  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  21:Drivers/CMSIS/Include/cmsis_gcc.h ****  * See the License for the specific language governing permissions and
+  22:Drivers/CMSIS/Include/cmsis_gcc.h ****  * limitations under the License.
+  23:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+  24:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  25:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __CMSIS_GCC_H
+  26:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_H
+  27:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  28:Drivers/CMSIS/Include/cmsis_gcc.h **** /* ignore some GCC warnings */
+  29:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic push
+  30:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wsign-conversion"
+  31:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wconversion"
+  32:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wunused-parameter"
+  33:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  34:Drivers/CMSIS/Include/cmsis_gcc.h **** /* Fallback for __has_builtin */
+  35:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __has_builtin
+  36:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __has_builtin(x) (0)
+  37:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  38:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  39:Drivers/CMSIS/Include/cmsis_gcc.h **** /* CMSIS compiler specific defines */
+  40:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __ASM
+  41:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __ASM                                  __asm
+  42:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  43:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __INLINE
+  44:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __INLINE                               inline
+  45:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  46:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __STATIC_INLINE
+  47:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __STATIC_INLINE                        static inline
+  48:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  49:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __STATIC_FORCEINLINE                 
+  50:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __STATIC_FORCEINLINE                   __attribute__((always_inline)) static inline
+  51:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif                                           
+  52:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __NO_RETURN
+  53:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __NO_RETURN                            __attribute__((__noreturn__))
+  54:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  55:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __USED
+  56:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __USED                                 __attribute__((used))
+  57:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  58:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __WEAK
+  59:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __WEAK                                 __attribute__((weak))
+  60:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  61:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __PACKED
+  62:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __PACKED                               __attribute__((packed, aligned(1)))
+  63:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  64:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __PACKED_STRUCT
+  65:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __PACKED_STRUCT                        struct __attribute__((packed, aligned(1)))
+  66:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 24
+
+
+  67:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __PACKED_UNION
+  68:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __PACKED_UNION                         union __attribute__((packed, aligned(1)))
+  69:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  70:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32        /* deprecated */
+  71:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  72:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  73:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  74:Drivers/CMSIS/Include/cmsis_gcc.h ****   struct __attribute__((packed)) T_UINT32 { uint32_t v; };
+  75:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  76:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32(x)                  (((struct T_UINT32 *)(x))->v)
+  77:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  78:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT16_WRITE
+  79:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  80:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  81:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  82:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_WRITE { uint16_t v; };
+  83:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  84:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_WRITE(addr, val)    (void)((((struct T_UINT16_WRITE *)(void *)(addr))-
+  85:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  86:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT16_READ
+  87:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  88:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  89:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  90:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_READ { uint16_t v; };
+  91:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  92:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_READ(addr)          (((const struct T_UINT16_READ *)(const void *)(add
+  93:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  94:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32_WRITE
+  95:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  96:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  97:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  98:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_WRITE { uint32_t v; };
+  99:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+ 100:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_WRITE(addr, val)    (void)((((struct T_UINT32_WRITE *)(void *)(addr))-
+ 101:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 102:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32_READ
+ 103:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+ 104:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+ 105:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+ 106:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_READ { uint32_t v; };
+ 107:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+ 108:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_READ(addr)          (((const struct T_UINT32_READ *)(const void *)(add
+ 109:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 110:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __ALIGNED
+ 111:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __ALIGNED(x)                           __attribute__((aligned(x)))
+ 112:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 113:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __RESTRICT
+ 114:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __RESTRICT                             __restrict
+ 115:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 116:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __COMPILER_BARRIER
+ 117:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __COMPILER_BARRIER()                   __ASM volatile("":::"memory")
+ 118:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 119:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 120:Drivers/CMSIS/Include/cmsis_gcc.h **** /* #########################  Startup and Lowlevel Init  ######################## */
+ 121:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 122:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __PROGRAM_START
+ 123:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 25
+
+
+ 124:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 125:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Initializes data and bss sections
+ 126:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details This default implementations initialized all data and additional bss
+ 127:Drivers/CMSIS/Include/cmsis_gcc.h ****            sections relying on .copy.table and .zero.table specified properly
+ 128:Drivers/CMSIS/Include/cmsis_gcc.h ****            in the used linker script.
+ 129:Drivers/CMSIS/Include/cmsis_gcc.h ****   
+ 130:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 131:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE __NO_RETURN void __cmsis_start(void)
+ 132:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 133:Drivers/CMSIS/Include/cmsis_gcc.h ****   extern void _start(void) __NO_RETURN;
+ 134:Drivers/CMSIS/Include/cmsis_gcc.h ****   
+ 135:Drivers/CMSIS/Include/cmsis_gcc.h ****   typedef struct {
+ 136:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t const* src;
+ 137:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t* dest;
+ 138:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t  wlen;
+ 139:Drivers/CMSIS/Include/cmsis_gcc.h ****   } __copy_table_t;
+ 140:Drivers/CMSIS/Include/cmsis_gcc.h ****   
+ 141:Drivers/CMSIS/Include/cmsis_gcc.h ****   typedef struct {
+ 142:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t* dest;
+ 143:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t  wlen;
+ 144:Drivers/CMSIS/Include/cmsis_gcc.h ****   } __zero_table_t;
+ 145:Drivers/CMSIS/Include/cmsis_gcc.h ****   
+ 146:Drivers/CMSIS/Include/cmsis_gcc.h ****   extern const __copy_table_t __copy_table_start__;
+ 147:Drivers/CMSIS/Include/cmsis_gcc.h ****   extern const __copy_table_t __copy_table_end__;
+ 148:Drivers/CMSIS/Include/cmsis_gcc.h ****   extern const __zero_table_t __zero_table_start__;
+ 149:Drivers/CMSIS/Include/cmsis_gcc.h ****   extern const __zero_table_t __zero_table_end__;
+ 150:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 151:Drivers/CMSIS/Include/cmsis_gcc.h ****   for (__copy_table_t const* pTable = &__copy_table_start__; pTable < &__copy_table_end__; ++pTable
+ 152:Drivers/CMSIS/Include/cmsis_gcc.h ****     for(uint32_t i=0u; i<pTable->wlen; ++i) {
+ 153:Drivers/CMSIS/Include/cmsis_gcc.h ****       pTable->dest[i] = pTable->src[i];
+ 154:Drivers/CMSIS/Include/cmsis_gcc.h ****     }
+ 155:Drivers/CMSIS/Include/cmsis_gcc.h ****   }
+ 156:Drivers/CMSIS/Include/cmsis_gcc.h ****  
+ 157:Drivers/CMSIS/Include/cmsis_gcc.h ****   for (__zero_table_t const* pTable = &__zero_table_start__; pTable < &__zero_table_end__; ++pTable
+ 158:Drivers/CMSIS/Include/cmsis_gcc.h ****     for(uint32_t i=0u; i<pTable->wlen; ++i) {
+ 159:Drivers/CMSIS/Include/cmsis_gcc.h ****       pTable->dest[i] = 0u;
+ 160:Drivers/CMSIS/Include/cmsis_gcc.h ****     }
+ 161:Drivers/CMSIS/Include/cmsis_gcc.h ****   }
+ 162:Drivers/CMSIS/Include/cmsis_gcc.h ****  
+ 163:Drivers/CMSIS/Include/cmsis_gcc.h ****   _start();
+ 164:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 165:Drivers/CMSIS/Include/cmsis_gcc.h ****   
+ 166:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __PROGRAM_START           __cmsis_start
+ 167:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 168:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 169:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __INITIAL_SP
+ 170:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __INITIAL_SP              __StackTop
+ 171:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 172:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 173:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __STACK_LIMIT
+ 174:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __STACK_LIMIT             __StackLimit
+ 175:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 176:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 177:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __VECTOR_TABLE
+ 178:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __VECTOR_TABLE            __Vectors
+ 179:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 180:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 26
+
+
+ 181:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __VECTOR_TABLE_ATTRIBUTE
+ 182:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __VECTOR_TABLE_ATTRIBUTE  __attribute((used, section(".vectors")))
+ 183:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 184:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 185:Drivers/CMSIS/Include/cmsis_gcc.h **** /* ###########################  Core Function Access  ########################### */
+ 186:Drivers/CMSIS/Include/cmsis_gcc.h **** /** \ingroup  CMSIS_Core_FunctionInterface
+ 187:Drivers/CMSIS/Include/cmsis_gcc.h ****     \defgroup CMSIS_Core_RegAccFunctions CMSIS Core Register Access Functions
+ 188:Drivers/CMSIS/Include/cmsis_gcc.h ****   @{
+ 189:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 190:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 191:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 192:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Enable IRQ Interrupts
+ 193:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Enables IRQ interrupts by clearing the I-bit in the CPSR.
+ 194:Drivers/CMSIS/Include/cmsis_gcc.h ****            Can only be executed in Privileged modes.
+ 195:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 196:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __enable_irq(void)
+ 197:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 198:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsie i" : : : "memory");
+ 199:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 200:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 201:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 202:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 203:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Disable IRQ Interrupts
+ 204:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Disables IRQ interrupts by setting the I-bit in the CPSR.
+ 205:Drivers/CMSIS/Include/cmsis_gcc.h ****            Can only be executed in Privileged modes.
+ 206:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 207:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __disable_irq(void)
+ 208:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 209:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsid i" : : : "memory");
+ 872              		.loc 3 209 3
+ 873              		.syntax unified
+ 874              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 875 0004 72B6     		cpsid i
+ 876              	@ 0 "" 2
+ 210:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 877              		.loc 3 210 1
+ 878              		.thumb
+ 879              		.syntax unified
+ 880 0006 00BF     		nop
+ 881              	.L25:
+ 882              	.LBE8:
+ 883              	.LBE7:
+ 223:Core/Src/main.cpp ****   /* USER CODE BEGIN Error_Handler_Debug */
+ 224:Core/Src/main.cpp ****   /* User can add his own implementation to report the HAL error return state */
+ 225:Core/Src/main.cpp ****   __disable_irq();
+ 226:Core/Src/main.cpp ****   while (1)
+ 884              		.loc 2 226 3 discriminator 1
+ 885 0008 FEE7     		b	.L25
+ 886              		.cfi_endproc
+ 887              	.LFE2245:
+ 888              		.cantunwind
+ 889              		.fnend
+ 891              		.text
+ 892              	.Letext0:
+ 893              		.file 4 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4r5xx.h"
+ 894              		.file 5 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-
+ 895              		.file 6 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 27
+
+
+ 896              		.file 7 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-
+ 897              		.file 8 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for-
+ 898              		.file 9 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h"
+ 899              		.file 10 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h"
+ 900              		.file 11 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h"
+ 901              		.file 12 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h"
+ 902              		.file 13 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 903              		.file 14 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 904              		.file 15 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 905              		.file 16 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 906              		.file 17 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 907              		.file 18 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 908              		.file 19 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 909              		.file 20 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 910              		.file 21 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 911              		.file 22 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 912              		.file 23 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 913              		.file 24 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 914              		.file 25 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 915              		.file 26 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 916              		.file 27 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 917              		.file 28 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 918              		.file 29 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 919              		.file 30 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 920              		.file 31 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 921              		.file 32 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 922              		.file 33 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 923              		.file 34 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 924              		.file 35 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 925              		.file 36 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 926              		.file 37 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 927              		.file 38 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 928              		.file 39 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 929              		.file 40 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 930              		.file 41 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 931              		.file 42 "/Users/lawrencestanton/Library/Application Support/Code/User/globalStorage/bmd.stm32-for
+ 932              		.file 43 "Core/Inc/UBX.hpp"
+ 933              		.file 44 "Core/Inc/UBX_CFG.hpp"
+ 934              		.file 45 "Core/Inc/UBX_CFG_KEYID.hpp"
+ 935              		.file 46 "Core/Inc/StaticString.hpp"
+ 936              		.file 47 "Core/Inc/M9N_Base.hpp"
+ 937              		.file 48 "<built-in>"
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 28
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 main.cpp
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:20     .rodata._ZStL19piecewise_construct:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:23     .rodata._ZStL19piecewise_construct:0000000000000000 _ZStL19piecewise_construct
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:26     .text._ZL20__gthread_key_deletei:0000000000000000 $t
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:31     .text._ZL20__gthread_key_deletei:0000000000000000 _ZL20__gthread_key_deletei
+.ARM.exidx.text._ZL20__gthread_key_deletei:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:67     .rodata._ZL23CFG_HW_ANT_CFG_VOLTCTRL:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:70     .rodata._ZL23CFG_HW_ANT_CFG_VOLTCTRL:0000000000000000 _ZL23CFG_HW_ANT_CFG_VOLTCTRL
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:75     .rodata._ZL23CFG_HW_ANT_CFG_SHORTDET:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:78     .rodata._ZL23CFG_HW_ANT_CFG_SHORTDET:0000000000000000 _ZL23CFG_HW_ANT_CFG_SHORTDET
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:83     .rodata._ZL27CFG_HW_ANT_CFG_SHORTDET_POL:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:86     .rodata._ZL27CFG_HW_ANT_CFG_SHORTDET_POL:0000000000000000 _ZL27CFG_HW_ANT_CFG_SHORTDET_POL
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:91     .rodata._ZL22CFG_HW_ANT_CFG_OPENDET:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:94     .rodata._ZL22CFG_HW_ANT_CFG_OPENDET:0000000000000000 _ZL22CFG_HW_ANT_CFG_OPENDET
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:99     .rodata._ZL26CFG_HW_ANT_CFG_OPENDET_POL:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:102    .rodata._ZL26CFG_HW_ANT_CFG_OPENDET_POL:0000000000000000 _ZL26CFG_HW_ANT_CFG_OPENDET_POL
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:107    .rodata._ZL22CFG_HW_ANT_CFG_PWRDOWN:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:110    .rodata._ZL22CFG_HW_ANT_CFG_PWRDOWN:0000000000000000 _ZL22CFG_HW_ANT_CFG_PWRDOWN
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:115    .rodata._ZL26CFG_HW_ANT_CFG_PWRDOWN_POL:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:118    .rodata._ZL26CFG_HW_ANT_CFG_PWRDOWN_POL:0000000000000000 _ZL26CFG_HW_ANT_CFG_PWRDOWN_POL
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:123    .rodata._ZL22CFG_HW_ANT_CFG_RECOVER:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:126    .rodata._ZL22CFG_HW_ANT_CFG_RECOVER:0000000000000000 _ZL22CFG_HW_ANT_CFG_RECOVER
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:131    .rodata._ZL25CFG_HW_ANT_SUP_SWITCH_PIN:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:134    .rodata._ZL25CFG_HW_ANT_SUP_SWITCH_PIN:0000000000000000 _ZL25CFG_HW_ANT_SUP_SWITCH_PIN
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:139    .rodata._ZL24CFG_HW_ANT_SUP_SHORT_PIN:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:142    .rodata._ZL24CFG_HW_ANT_SUP_SHORT_PIN:0000000000000000 _ZL24CFG_HW_ANT_SUP_SHORT_PIN
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:147    .rodata._ZL23CFG_HW_ANT_SUP_OPEN_PIN:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:150    .rodata._ZL23CFG_HW_ANT_SUP_OPEN_PIN:0000000000000000 _ZL23CFG_HW_ANT_SUP_OPEN_PIN
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:155    .rodata._ZL21CFG_HW_ANT_SUP_ENGINE:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:158    .rodata._ZL21CFG_HW_ANT_SUP_ENGINE:0000000000000000 _ZL21CFG_HW_ANT_SUP_ENGINE
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:163    .rodata._ZL24CFG_HW_ANT_SUP_SHORT_THR:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:166    .rodata._ZL24CFG_HW_ANT_SUP_SHORT_THR:0000000000000000 _ZL24CFG_HW_ANT_SUP_SHORT_THR
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:171    .rodata._ZL23CFG_HW_ANT_SUP_OPEN_THR:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:174    .rodata._ZL23CFG_HW_ANT_SUP_OPEN_THR:0000000000000000 _ZL23CFG_HW_ANT_SUP_OPEN_THR
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:179    .rodata._ZL16CFG_NMEA_PROTVER:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:182    .rodata._ZL16CFG_NMEA_PROTVER:0000000000000000 _ZL16CFG_NMEA_PROTVER
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:187    .rodata._ZL15CFG_NMEA_MAXSVS:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:190    .rodata._ZL15CFG_NMEA_MAXSVS:0000000000000000 _ZL15CFG_NMEA_MAXSVS
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:195    .rodata._ZL15CFG_NMEA_COMPAT:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:198    .rodata._ZL15CFG_NMEA_COMPAT:0000000000000000 _ZL15CFG_NMEA_COMPAT
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:203    .rodata._ZL17CFG_NMEA_CONSIDER:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:206    .rodata._ZL17CFG_NMEA_CONSIDER:0000000000000000 _ZL17CFG_NMEA_CONSIDER
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:211    .rodata._ZL16CFG_NMEA_LIMIT82:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:214    .rodata._ZL16CFG_NMEA_LIMIT82:0000000000000000 _ZL16CFG_NMEA_LIMIT82
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:219    .rodata._ZL17CFG_NMEA_HIGHPREC:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:222    .rodata._ZL17CFG_NMEA_HIGHPREC:0000000000000000 _ZL17CFG_NMEA_HIGHPREC
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:227    .rodata._ZL20CFG_NMEA_SVNUMBERING:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:230    .rodata._ZL20CFG_NMEA_SVNUMBERING:0000000000000000 _ZL20CFG_NMEA_SVNUMBERING
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:235    .rodata._ZL17CFG_NMEA_FILT_GPS:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:238    .rodata._ZL17CFG_NMEA_FILT_GPS:0000000000000000 _ZL17CFG_NMEA_FILT_GPS
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:243    .rodata._ZL18CFG_NMEA_FILT_SBAS:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:246    .rodata._ZL18CFG_NMEA_FILT_SBAS:0000000000000000 _ZL18CFG_NMEA_FILT_SBAS
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:251    .rodata._ZL17CFG_NMEA_FILT_GAL:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:254    .rodata._ZL17CFG_NMEA_FILT_GAL:0000000000000000 _ZL17CFG_NMEA_FILT_GAL
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:259    .rodata._ZL18CFG_NMEA_FILT_QZSS:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:262    .rodata._ZL18CFG_NMEA_FILT_QZSS:0000000000000000 _ZL18CFG_NMEA_FILT_QZSS
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 29
+
+
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:267    .rodata._ZL17CFG_NMEA_FILT_GLO:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:270    .rodata._ZL17CFG_NMEA_FILT_GLO:0000000000000000 _ZL17CFG_NMEA_FILT_GLO
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:275    .rodata._ZL17CFG_NMEA_FILT_BDS:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:278    .rodata._ZL17CFG_NMEA_FILT_BDS:0000000000000000 _ZL17CFG_NMEA_FILT_BDS
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:283    .rodata._ZL19CFG_NMEA_OUT_INVFIX:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:286    .rodata._ZL19CFG_NMEA_OUT_INVFIX:0000000000000000 _ZL19CFG_NMEA_OUT_INVFIX
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:291    .rodata._ZL19CFG_NMEA_OUT_MSKFIX:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:294    .rodata._ZL19CFG_NMEA_OUT_MSKFIX:0000000000000000 _ZL19CFG_NMEA_OUT_MSKFIX
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:299    .rodata._ZL20CFG_NMEA_OUT_INVTIME:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:302    .rodata._ZL20CFG_NMEA_OUT_INVTIME:0000000000000000 _ZL20CFG_NMEA_OUT_INVTIME
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:307    .rodata._ZL20CFG_NMEA_OUT_INVDATE:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:310    .rodata._ZL20CFG_NMEA_OUT_INVDATE:0000000000000000 _ZL20CFG_NMEA_OUT_INVDATE
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:315    .rodata._ZL20CFG_NMEA_OUT_ONLYGPS:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:318    .rodata._ZL20CFG_NMEA_OUT_ONLYGPS:0000000000000000 _ZL20CFG_NMEA_OUT_ONLYGPS
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:323    .rodata._ZL22CFG_NMEA_OUT_FROZENCOG:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:326    .rodata._ZL22CFG_NMEA_OUT_FROZENCOG:0000000000000000 _ZL22CFG_NMEA_OUT_FROZENCOG
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:331    .rodata._ZL21CFG_NMEA_MAINTALKERID:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:334    .rodata._ZL21CFG_NMEA_MAINTALKERID:0000000000000000 _ZL21CFG_NMEA_MAINTALKERID
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:339    .rodata._ZL20CFG_NMEA_GSVTALKERID:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:342    .rodata._ZL20CFG_NMEA_GSVTALKERID:0000000000000000 _ZL20CFG_NMEA_GSVTALKERID
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:347    .rodata._ZL20CFG_NMEA_BDSTALKERID:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:350    .rodata._ZL20CFG_NMEA_BDSTALKERID:0000000000000000 _ZL20CFG_NMEA_BDSTALKERID
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:359    .bss.huart4:0000000000000000 huart4
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:356    .bss.huart4:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:366    .bss.hdma_uart4_rx:0000000000000000 hdma_uart4_rx
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:363    .bss.hdma_uart4_rx:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:373    .bss.hdma_uart4_tx:0000000000000000 hdma_uart4_tx
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:370    .bss.hdma_uart4_tx:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:376    .text.main:0000000000000000 $t
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:382    .text.main:0000000000000000 main
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:430    .text._Z18SystemClock_Configv:0000000000000000 _Z18SystemClock_Configv
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:801    .text._ZL12MX_GPIO_Initv:0000000000000000 _ZL12MX_GPIO_Initv
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:719    .text._ZL11MX_DMA_Initv:0000000000000000 _ZL11MX_DMA_Initv
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:576    .text._ZL13MX_UART4_Initv:0000000000000000 _ZL13MX_UART4_Initv
+             .ARM.exidx.text.main:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:424    .text._Z18SystemClock_Configv:0000000000000000 $t
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:856    .text.Error_Handler:0000000000000000 Error_Handler
+.ARM.extab.text._Z18SystemClock_Configv:0000000000000000 $d
+.ARM.exidx.text._Z18SystemClock_Configv:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:571    .text._ZL13MX_UART4_Initv:0000000000000000 $t
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:707    .text._ZL13MX_UART4_Initv:00000000000000bc $d
+.ARM.exidx.text._ZL13MX_UART4_Initv:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:714    .text._ZL11MX_DMA_Initv:0000000000000000 $t
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:790    .text._ZL11MX_DMA_Initv:0000000000000060 $d
+.ARM.extab.text._ZL11MX_DMA_Initv:0000000000000000 $d
+.ARM.exidx.text._ZL11MX_DMA_Initv:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:796    .text._ZL12MX_GPIO_Initv:0000000000000000 $t
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:843    .text._ZL12MX_GPIO_Initv:000000000000002c $d
+.ARM.exidx.text._ZL12MX_GPIO_Initv:0000000000000000 $d
+/var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s:850    .text.Error_Handler:0000000000000000 $t
+    .ARM.exidx.text.Error_Handler:0000000000000000 $d
+
+UNDEFINED SYMBOLS
+HAL_Init
+_Z8GPS_Initv
+HAL_Delay
+GPS_Update
+ARM GAS  /var/folders/bb/dhrb69655gd8t4nf464nxc_00000gn/T//cclQo8v0.s 			page 30
+
+
+__aeabi_unwind_cpp_pr0
+memset
+HAL_PWREx_ControlVoltageScaling
+HAL_RCC_OscConfig
+HAL_RCC_ClockConfig
+__aeabi_unwind_cpp_pr1
+HAL_UART_Init
+HAL_UARTEx_SetTxFifoThreshold
+HAL_UARTEx_SetRxFifoThreshold
+HAL_UARTEx_EnableFifoMode
+HAL_NVIC_SetPriority
+HAL_NVIC_EnableIRQ
