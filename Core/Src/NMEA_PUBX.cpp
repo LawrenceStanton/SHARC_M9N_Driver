@@ -44,6 +44,9 @@ M9N_Base::NMEA_PUBX::Config::Config(
 			setChecksum();
 }
 
+#pragma GCC diagnostic ignored "-Wformat-truncation"	
+// Throws because of 8-bit port ID and 32-bit baudrate. These values will be bounded to a smaller range.
+// ! Careful modifying the format string while this warning is ignored.
 string M9N_Base::NMEA_PUBX::Config::toString(char buff[35]){
 	std::snprintf(buff, 35, "$PUBX,41,%1hu,%04hX,%04hX,%6lu,%1u*%02X\r\n",
 					static_cast<uint8_t>(portId), 
@@ -54,6 +57,7 @@ string M9N_Base::NMEA_PUBX::Config::toString(char buff[35]){
 					cs.cs);
 	return string(buff);
 }
+#pragma GCC diagnostic pop	/* Format Truncation */
 
 M9N_Base::NMEA_PUBX::Message M9N_Base::NMEA_PUBX::getMessage(const StaticString & s){
 	if(s.size() < 6) return Message::UNKNOWN;
@@ -155,10 +159,10 @@ M9N_Base::NMEA_PUBX::Rate::Rate(
 			setChecksum();
 }
 
-string M9N_Base::NMEA_PUBX::Rate::toString(char buff[30]){
-	std::snprintf(buff, 30, "$PUBX,40,%3s,%1u,%1u,%1u,%1u,%1u,%1u*%02X\r\n",
+string M9N_Base::NMEA_PUBX::Rate::toString(char buff[40]){
+	std::snprintf(buff, 40, "$PUBX,40,%3s,%3u,%3u,%3u,%3u,%3u,0*%02X\r\n",
 					NMEA_PUBX::toString(ID).c_str(),	
-					rddc, rus1, rus2, rusb, rspi, reserved, cs.cs );
+					rddc, rus1, rus2, rusb, rspi, cs.cs );
 	
 	return string(buff);
 }

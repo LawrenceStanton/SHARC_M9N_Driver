@@ -108,7 +108,7 @@ public:
 		uint8_t rusb = 0u,
 		uint8_t rspi = 0u);
 
-	virtual string toString(char buff[30]) final;
+	virtual string toString(char buff[40]) final;
 };
 
 /*** END OF FILE ***/

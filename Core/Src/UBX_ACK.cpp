@@ -18,8 +18,7 @@
 #include "UBX_ACK.hpp"
 
 UBX::ACKNAK::ACKNAK(const vect & ubx) :
-	UBX(ubx),
-	UBX::OTP(ubx){
+	UBX(0x05, 0x01, 2) {
 	if(ubx.size() == 10u){
 		ackClsID = ubx[4];
 		ackMsgID = ubx[5];

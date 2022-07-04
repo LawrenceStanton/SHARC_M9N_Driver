@@ -69,25 +69,6 @@ using vect = std::vector<uint8_t>;
 UBX::UBX(U1 msgClass, U1 msgID, U2 len) :
 	msgClass(msgClass), msgID(msgID), len(len) {}
 
-UBX::UBX(const vect & ubx) :
-	len(getPayloadLen(ubx)){
-	if(ubx.size() >= 8u){	// Minimum required size for valid UBX frame.
-		msgClass = ubx[2];
-		msgID = ubx[3];
-
-		if(ubx.size() == (len + 8u) ){		// Check the len. Will also reject inputs with trailing excess elements.
-			cs.ckA = ubx[ubx.size() - 2];	// Second to last.
-			cs.ckB = ubx[ubx.size() - 1];	// Last
-		}
-		else{				// Same outcome as below.
-			msgClass = msgID = 0;
-		}
-	}
-	else{				// Insufficient data to be valid ubx. Default values to 0.
-		msgClass = msgID = 0;
-	}
-}
-
 /**
  * @brief CalcuUBX::Checksum::Checksum object from a UBX frame prototype (without any checksum> attached.
  * 
@@ -121,7 +102,16 @@ UBX::U2 UBX::getPayloadLen(const std::vector<uint8_t> & ubx){
 	else return 0;
 }
 
-
+std::array<uint8_t, 6> UBX::header() const{
+	std::array<uint8_t, 6> header;
+	header[0] = sync1;
+	header[1] = sync2;
+	header[2] = msgClass;
+	header[3] = msgID;
+	header[4] = *(uint8_t *)&len;
+	header[5] = *((uint8_t *)&len + 1);
+	return header;
+}
 
 
 

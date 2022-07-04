@@ -20,6 +20,7 @@
 
 #include "UBX.hpp"
 
+#include <type_traits>
 
 class UBX::CFG {
 public:
@@ -51,46 +52,21 @@ public:
 	// class USB;			// Depricated
 	class VAL;
 
-	struct KeyID;
-
 private:
 
-
-};
-
-struct UBX::CFG::KeyID{
-	enum class Size : uint8_t{
-		BIT = 0x01u,	// 1-bit (will use 1 byte of storage, LSB significant)
-		BYTE = 0x02,	// 1-byte
-		WORD = 0x03,	// 2-bytes
-		DOUBLE = 0x04,	// 4-bytes
-		QUAD = 0x05		// 8-bytes
-	} size;
-
-	U1 groupID;
-	U2 itemID;
-
-	X4 toKey();
-	
-	constexpr KeyID(Size size, U1 groupID, U2 itemID) : 
-		size(size), groupID(groupID), itemID(itemID) {}
-	constexpr KeyID(U4 && key) : 
-		size(static_cast<Size>( (key & (0b111u << 28)) >> 28 )),
-		groupID((key & (0xFFu << 16)) >> 16),
-		itemID((key & 0xFFFu)) {}
 };
 
 class UBX::CFG::RST : public UBX{
 public:
-	RST(const vect & ubx);
+
 };
 
 class UBX::CFG::RXM : public UBX{
 public:
-	RXM(const vect & ubx);
+
 };
 
-class UBX::CFG::VAL {
+class UBX::CFG::VAL : UBX::CFG {
 public:
 	class DEL;
 	class GET;
@@ -103,11 +79,77 @@ public:
 		APPLY			= 0x03u
 	};
 
+		struct KeyID{
+		enum class Size : uint8_t{
+			BIT = 0x01u,	// 1-bit (will use 1 byte of storage, LSB significant)
+			BYTE = 0x02,	// 1-byte
+			WORD = 0x03,	// 2-bytes
+			DOUBLE = 0x04,	// 4-bytes
+			QUAD = 0x05		// 8-bytes
+		} size;
+
+		U1 groupID;
+		U2 itemID;
+
+		X4 toKey() const;
+		
+		KeyID() = default;
+
+		constexpr KeyID(Size size, U1 groupID, U2 itemID) : 
+			size(size), groupID(groupID), itemID(itemID) {}
+		constexpr KeyID(U4 && key) : 
+			size(static_cast<Size>( (key & (0b111u << 28)) >> 28 )),
+			groupID((key & (0xFFu << 16)) >> 16),
+			itemID((key & 0xFFFu)) {}
+	};
+
+	struct KeyValuePair{
+		KeyID keyId;
+
+		enum{
+			L, U1, I1, E1, X1,	// 1-Byte Sized
+			U2, I2, E2, X2,		// 2-Byte Sized
+			U4, I4, E4, X4, R4	// 4-Byte Sized
+		} tag;
+
+		union{
+			UBX::L l;
+			UBX::U1 u1;
+			UBX::I1 i1;
+			UBX::E1 e1;
+			UBX::X1 x1;
+			UBX::U2 u2;
+			UBX::I2 i2;
+			UBX::E2 e2;
+			UBX::X2 x2;
+			UBX::U4 u4;
+			UBX::I4 i4;
+			UBX::E4 e4;
+			UBX::X4 x4;
+			UBX::R4 r4;
+		};
+
+		uint8_t size() const;
+		std::pair<std::array<uint8_t, 12>, uint8_t> binary() const;	// {array, size occupied}
+
+		KeyValuePair() = default;
+
+		template<typename T>
+		KeyValuePair(KeyID key, T val);
+
+	};
+
+	enum class CFG_PM_OPERATEMODE : UBX::E1{
+		FULL  = 0u,
+		PSMOO = 1u,
+		PSMCT = 2u
+	};
+
 private:
 	VAL() = delete;
 };
 
-class UBX::CFG::VAL::DEL : public UBX, public UBX::SET {
+class UBX::CFG::VAL::DEL : public UBX {
 public:
 	class TRANSACTION;	// Extension for transaction-based deletion.
 
@@ -122,7 +164,7 @@ protected:
 private:
 	const U1 res0[2] = {0x00u, 0x00u};
 protected:
-	std::vector<KeyID> keys;
+	std::pair<std::array<KeyID, 64>, uint8_t> keys; // {key array, no of keys}
 
 public:
 
@@ -151,33 +193,30 @@ protected:
 	GET() : UBX(0x06, 0x8B) {}
 };
 
-class UBX::CFG::VAL::GET::POLL_REQ : public UBX::CFG::VAL::GET, public UBX::POLL_REQ {
+class UBX::CFG::VAL::GET::POLL_REQ : public UBX::CFG::VAL::GET {
 private:
 	const U1 version = 0x00;
 	Layer layer;
 	U2 position;
-	std::vector<KeyID> keys{};
+	std::pair<std::array<KeyID, 64>, uint8_t> cfgData; // {key array, no of keys}
 
 public:
 	POLL_REQ(KeyID key);
 	POLL_REQ(std::vector<KeyID> keys);
-
-	virtual vect toPollReq() final;
 };
 
-class UBX::CFG::VAL::GET::POLLED : public UBX::CFG, public UBX::POLLED {
+class UBX::CFG::VAL::GET::POLLED : public UBX::CFG {
 private:
 	const U1 version = 0x01;
 	Layer layer;
 	U2 position;
-	std::vector< std::pair<KeyID, std::vector<uint8_t>> > cfgData;	// Data will still be in binary format within the pair's vector.
-	// Maximum 64 key-value pairs.
+	std::pair<std::array<KeyValuePair, 64>, uint8_t> cfgData; // {key array, no of keys}
 
 public:
 	POLLED(const vect & ubx);
 };
 
-class UBX::CFG::VAL::SET : public UBX::CFG, public UBX::SET {
+class UBX::CFG::VAL::SET : public UBX {
 public:
 	class TRANSACTION;	// Extension for setting via a transaction.
 
@@ -192,27 +231,28 @@ protected:
 	Layers layers;
 private:
 	U1 reserved0[2] = {0x00u, 0x00u};
+
 protected:
-	std::vector< std::pair<KeyID, vect> > cfgData;	// Multi-byte data to be cast to hex vector.
-	// Maximum 64 key-value pairs.
+	std::pair<std::array<KeyValuePair, 64>, uint8_t> cfgData;	// {array, no of keys used}
 
 private:
-	SET() = delete;
+	SET() : UBX(0x06, 0x8A, 4) {};
 
 public:
-	SET(Layers layers, std::vector< std::pair<KeyID, vect> > cfgData = {});
+	SET(KeyValuePair cfg, Layers layers = Layers::RAM) : UBX(0x06, 0x8A, cfg.size() + 4), layers(layers) { cfgData.first[cfgData.second++] = cfg; }
 
-	void push(std::pair<KeyID, vect> cfg);
-	virtual vect toSetterHex();
+	void push(KeyValuePair cfg);	
+	std::pair<std::array<uint8_t, 6+64*12>, uint8_t> binary() const noexcept ;
 };
 
 class UBX::CFG::VAL::SET::TRANSACTION : public UBX::CFG::VAL::SET {
 private:
 	Action action;
 
-	TRANSACTION(Layers layers, Action action ,std::vector< std::pair<KeyID, vect> > cfgData = {});
+	TRANSACTION(Layers layers, Action action, std::array<KeyValuePair, 64> cfgData);
 };
 
-#include "UBX_CFG_KEYID.hpp"
+#include "UBX_CFG_KEYID.hpp"	// KeyId Constant Expressions
+
 
 /*** END OF FILE ***/

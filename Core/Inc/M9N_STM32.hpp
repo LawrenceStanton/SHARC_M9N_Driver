@@ -46,6 +46,8 @@ private:
 
 	using M9N_Base::transmit;
 	virtual void transmit(const uint8_t * first, const uint8_t * last) final;
+	void transmit(UBX::CFG::VAL::SET set);
+	void transmit(UBX::CFG::VAL::GET get);
 
 	virtual void delay(uint32_t delay) final;
 	virtual void setBaudrate(Baud baud = Baud::B38400, PortID portId = PortID::UART1) final;

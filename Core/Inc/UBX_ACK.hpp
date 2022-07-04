@@ -20,7 +20,7 @@
 
 #include "UBX.hpp"
 
-class UBX::ACKNAK : public UBX, UBX::OTP{
+class UBX::ACKNAK : public UBX{
 public:
 	class ACK;
 	class NAK;

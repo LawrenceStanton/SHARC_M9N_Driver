@@ -36,6 +36,16 @@ void M9N::transmit(const uint8_t * first, const uint8_t * last){
 	uart.tx.transmit(first, last);	// Delegate
 }
 
+void M9N::transmit(UBX::CFG::VAL::SET set){
+	auto data = set.binary();
+	transmit(data.first.begin(), data.first.begin() + data.second);
+}
+
+// void M9N::transmit(UBX::CFG::VAL::GET get){
+// 	auto data = get.binary();
+// }
+
+
 
 inline void M9N::delay(uint32_t delay){ HAL_Delay(delay); }
 

@@ -68,6 +68,14 @@ int main(){
 
 	GPS_Init();
 
+	UBX::CFG::VAL::SET set{{CFG_PM_OPERATEMODE, UBX::CFG::VAL::CFG_PM_OPERATEMODE::PSMOO}};
+	auto hex = set.binary();
+	set.push({CFG_UART1_BAUDRATE, M9N::Baud::B115200});
+	hex = set.binary();
+
+
+	(void) hex;
+
 	while(true){
 		HAL_Delay(100);
 		GPS_Update();

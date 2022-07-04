@@ -59,15 +59,20 @@ public:
 	class POLL_REQ;
 
 	/* UBX Type Definitions */
+	typedef bool		L;
 	typedef uint8_t 	U1;
 	typedef int8_t 		I1;
+	typedef uint8_t		E1;
 	typedef uint8_t 	X1;
+
 	typedef uint16_t 	U2;
 	typedef int16_t 	I2;
 	#ifdef __ARMEL__
+	typedef uint16_t	E2;
 	typedef uint16_t 	X2;
 	typedef uint32_t	U4;
 	typedef int32_t		I4;
+	typedef uint32_t	E4;
 	typedef uint32_t	X4;
 	#else
 	#error "UBX Data formats not implemented for non-little endian local system."
@@ -78,8 +83,6 @@ public:
 
 	static U2 getPayloadLen(const std::vector<uint8_t> & ubx);	// Extracts a UBX frame length specifier value from a frame hex vector.
 
-	template<typename T>
-	static std::vector<uint8_t>  toHex(const T & n);		// General purpose variable to little-endian hex vector function.
 	
 protected:
 	static const U1 sync1 = 0xB5;	// 'mu'
@@ -96,60 +99,14 @@ protected:
 		Checksum(const vect & ubxProto);
 		Checksum(U1 _ckA, U1 _ckB);
 
-		inline vect toHex() { return vect{ckA, ckB}; }
 	} cs;
 
 	UBX() = delete;
 	UBX(U1 msgClass, U1 msgID, U2 len = 0);
-	UBX(const vect & ubx);
+
+	std::array<uint8_t, 6> header() const;
 };
 
-template<typename T>
-vect UBX::toHex(const T & n){
-	#ifdef __ARMEL__	// If ARM Little Endian. This should be the default for all STM32 devices.
-	return vect(&n, &n + sizeof(T));
-	#else
-	// Unimplemented
-	#error "UBX::toHex not implemented for Big Endian formatting."
-	#endif
-}
-
-class UBX::INP{
-public:
-	virtual vect toInpHex() = 0;
-};
-
-class UBX::OTP{
-protected:
-	OTP(const vect & ubx) {(void)ubx;}
-};
-
-class UBX::INOUT : INP, OTP {};
-
-class UBX::PERIOD : OTP {};
-
-class UBX::COMMAND : INP {};
-
-class UBX::GET : COMMAND{
-public:
-	virtual vect toGetterHex() = 0;	// Hex vector for getting a particular frame.
-};
-
-class UBX::SET {
-public:
-	virtual vect toSetterHex() = 0;	// Hex vector for issuing command.
-};
-
-class UBX::GETSET : GET, SET {};
-
-class UBX::POLLED : GET {};
-
-class UBX::PERIOD_POLLED : POLLED {};
-
-class UBX::POLL_REQ {
-public:
-	virtual vect toPollReq() = 0;
-};
 
 class UBX::SEC : public UBX{
 public:
