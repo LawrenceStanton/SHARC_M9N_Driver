@@ -23,7 +23,7 @@
 
 extern M9N m9n;
 
-extern GPS_Data_t gpsData;
+extern GPS_Data_t gpsDataLive;
 
 extern "C" typedef enum{
 	GPS_Init_OK = 1,

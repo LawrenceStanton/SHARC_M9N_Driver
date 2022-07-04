@@ -29,6 +29,16 @@ M9N::M9N(UART_HandleTypeDef * h, IRQn_Type uartIrq, IRQn_Type dmaTxIrq, IRQn_Typ
 	uart(h, uartIrq, dmaTxIrq, dmaRxIrq) {}
 
 void M9N::init(){
+	const std::array<NMEA_PUBX::Message, 7u> msgs = {  
+		NMEA_PUBX::Message::GSV, 
+		NMEA_PUBX::Message::RMC, 
+		NMEA_PUBX::Message::VTG,
+		NMEA_PUBX::Message::TXT 
+		};
+
+	for(auto m : msgs)
+		setRate(NMEA_PUBX::Rate(m));
+		
 	uart.rx.beginReceive();
 }
 

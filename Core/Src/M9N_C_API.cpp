@@ -30,11 +30,9 @@ GPS_Init_msg_t GPS_Init(){
 	return GPS_Init_OK;
 }
 
-
 void GPS_Update(){
 	m9n.scanMessages();
 }
-
 
 uint8_t GPS_Data_Ready(){
 	return (m9n.dataReady() ? 1u : 0u);
@@ -49,31 +47,31 @@ void GPS_InterruptsOn(){
 }
 
 void receiveGLL(const NMEA_Standard::GLL & gll){
-	gpsData.coordinates.tic = HAL_GetTick();
-	gpsData.coordinates.lat = gll.lat;
-	gpsData.coordinates.longi = gll.lon;
-	gpsData.coordinates.time = midnight + gll.time;
+	gpsDataLive.coordinates.tic = HAL_GetTick();
+	gpsDataLive.coordinates.lat = gll.lat;
+	gpsDataLive.coordinates.longi = gll.lon;
+	gpsDataLive.coordinates.time = midnight + gll.time;
 }
 
 void receiveGSA(const NMEA_Standard::GSA & gsa){
 	static const uint32_t ticTimeDelayThreshold = 5000u;
 
-	gpsData.diag.HDOP.digit = static_cast<int>(gsa.hdop);
-	gpsData.diag.HDOP.precision = static_cast<int>( (gsa.hdop - gpsData.diag.HDOP.digit)*100 );
-	gpsData.diag.VDOP.digit = static_cast<int>(gsa.vdop);
-	gpsData.diag.VDOP.precision = static_cast<int>((gsa.vdop - gpsData.diag.VDOP.digit) * 100);
-	gpsData.diag.PDOP.digit = static_cast<int>(gsa.pdop);
-	gpsData.diag.PDOP.precision = static_cast<int>((gsa.pdop - gpsData.diag.PDOP.digit) * 100);
+	gpsDataLive.diag.HDOP.digit = static_cast<int>(gsa.hdop);
+	gpsDataLive.diag.HDOP.precision = static_cast<int>( (gsa.hdop - gpsDataLive.diag.HDOP.digit)*100 );
+	gpsDataLive.diag.VDOP.digit = static_cast<int>(gsa.vdop);
+	gpsDataLive.diag.VDOP.precision = static_cast<int>((gsa.vdop - gpsDataLive.diag.VDOP.digit) * 100);
+	gpsDataLive.diag.PDOP.digit = static_cast<int>(gsa.pdop);
+	gpsDataLive.diag.PDOP.precision = static_cast<int>((gsa.pdop - gpsDataLive.diag.PDOP.digit) * 100);
 	
-	gpsData.diag.num_sats = std::count_if(gsa.svid.begin(), gsa.svid.end(), [](uint8_t n) -> bool { return n!=0; } );	// TODO: GSA Receives Satellite IDs, not the number of sattelites
+	gpsDataLive.diag.num_sats = std::count_if(gsa.svid.begin(), gsa.svid.end(), [](uint8_t n) -> bool { return n!=0; } );	// TODO: GSA Receives Satellite IDs, not the number of sattelites
 	
-	gpsData.diag.fix_type = gsa.navMode;
+	gpsDataLive.diag.fix_type = gsa.navMode;
 	
-	auto delaySinceLocation = (int32_t)HAL_GetTick() - gpsData.coordinates.tic;
+	auto delaySinceLocation = (int32_t)HAL_GetTick() - gpsDataLive.coordinates.tic;
 
-	if(delaySinceLocation < 0) 							gpsData.diag.time = 0;
-	else if(delaySinceLocation < ticTimeDelayThreshold) gpsData.diag.time = gpsData.coordinates.time;
-	else 												gpsData.diag.time = gpsData.coordinates.time + delaySinceLocation;
+	if(delaySinceLocation < 0) 							gpsDataLive.diag.time = 0;
+	else if(delaySinceLocation < ticTimeDelayThreshold) gpsDataLive.diag.time = gpsDataLive.coordinates.time;
+	else 												gpsDataLive.diag.time = gpsDataLive.coordinates.time + delaySinceLocation;
 }
 
 void receiveZDA(const NMEA_Standard::ZDA & zda){
